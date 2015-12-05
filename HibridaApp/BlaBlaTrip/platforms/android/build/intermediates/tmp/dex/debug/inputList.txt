@@ -1,0 +1,2 @@
+/Users/AnderMac/Documents/ECLIPSE/BlaBlaTripApp/conDByServer/BlaBlaTrip/platforms/android/build/intermediates/classes/debug
+/Users/AnderMac/Documents/ECLIPSE/BlaBlaTripApp/conDByServer/BlaBlaTrip/platforms/android/build/intermediates/pre-dexed/debug/classes-1752c44c4aa61851e716059f514fef06f8158e0b.jar
