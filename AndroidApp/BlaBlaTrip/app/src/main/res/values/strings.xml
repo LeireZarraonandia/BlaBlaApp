@@ -10,4 +10,7 @@
     <string name="bt_alemania_text">Alemania</string>
     <string name="bt_portugal_text">Portugal</string>
     <string name="elige_pais_label">ELIJA PAÍS</string>
+
+    <!-- TRADUCTOR -->
+    <string name="title_activity_traductor">TRADUCTOR</string>
 </resources>
