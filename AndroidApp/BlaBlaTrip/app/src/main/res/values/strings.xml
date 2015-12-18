@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BlaBlaTrip</string>
+
+    <!-- INICIO -->
+    <string name="bt_valoracion_text">Valoración</string>
+    <string name="bt_traductor_text">Traductor</string>
+    <string name="bt_inglaterra_text">Inglaterra</string>
+    <string name="bt_italia_text">Italia</string>
+    <string name="bt_francia_text">Francia</string>
+    <string name="bt_alemania_text">Alemania</string>
+    <string name="bt_portugal_text">Portugal</string>
+    <string name="elige_pais_label">ELIJA PAÍS</string>
+</resources>
