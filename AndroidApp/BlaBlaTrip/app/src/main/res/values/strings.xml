@@ -13,4 +13,10 @@
 
     <!-- TRADUCTOR -->
     <string name="title_activity_traductor">TRADUCTOR</string>
+
+    <!-- VALORAION -->
+    <string name="title_activity_valoracion">VALORACIÓN</string>
+    <string name="elegirPais_label">Elija país a valorar o la app en su conjunto:</string>
+    <string name="valoracion_label">Escriba su valoración: </string>
+    <string name="bt_enviarValoracion">Enviar valoración</string>
 </resources>

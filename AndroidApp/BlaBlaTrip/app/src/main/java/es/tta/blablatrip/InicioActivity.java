@@ -20,4 +20,10 @@ public class InicioActivity extends AppCompatActivity
         Intent intent = new Intent(this, TraductorActivity.class);
         startActivity(intent);
     }
+
+    public void valoracion (View view)
+    {
+        Intent intent = new Intent(this, ValoracionActivity.class);
+        startActivity(intent);
+    }
 }

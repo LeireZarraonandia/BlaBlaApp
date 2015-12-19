@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.tta.blablatrip">
 
+    <!-- Dar permisos de Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,13 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- TRADUCTOR -->
         <activity
             android:name=".TraductorActivity"
-            android:label="@string/title_activity_traductor"
-        />
-    </application>
+            android:label="@string/title_activity_traductor" />
+        <!-- VALORAION -->
+        <activity
+            android:name=".ValoracionActivity"
+            android:label="@string/title_activity_valoracion" />
 
-    <!-- Dar permisos de Internet -->
-    <uses-permission android:name="android.permission.INTERNET" />
+
+    </application>
 
 </manifest>
