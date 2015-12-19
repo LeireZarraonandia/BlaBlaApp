@@ -25,7 +25,7 @@ public class TraductorActivity extends AppCompatActivity
         // Forzar el webview para que abra los enlaces internos dentro de la la APP
         mWebView.setWebViewClient(new WebViewClient());
         // Forzar el webview para que abra los enlaces externos en el navegador
-        mWebView.setWebViewClient(new MyAppWebViewClient());
+        //mWebView.setWebViewClient(new MyAppWebViewClient());
     }
 
     @Override

@@ -28,6 +28,9 @@
             android:label="@string/title_activity_valoracion" />
 
 
+        <activity
+            android:name=".PaisActivity"
+            android:label="@string/title_activity_pais"/>
     </application>
 
 </manifest>

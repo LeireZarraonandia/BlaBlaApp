@@ -43,13 +43,13 @@ public class ValoracionActivity extends AppCompatActivity
         lista.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             // las opciones están viculadas al parámetro 'i'
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
                 switch (i) {
                     case 0:
                     {
                         pais = datos[0];
-                        //Toast.makeText(getApplicationContext(), longitud, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "Número de opciones: "+Integer.toString(longitud), Toast.LENGTH_SHORT).show();
                         break;
                     }
                     case 1: {
