@@ -21,10 +21,11 @@ public class PaisActivity extends AppCompatActivity
 
         Intent intent = getIntent();
 
-        // Recoger nombre país de InicioActivity y ponerlo de título en PaisActivity
+        // recoger nombre país de InicioActivity y ponerlo de título en PaisActivity
         TextView titulo = (TextView) findViewById(R.id.titulo_pais);
         titulo.setText(intent.getStringExtra(nombre_pais));
 
+        // recoger nombre país
         String nombre = intent.getStringExtra(nombre_pais);
 
         RelativeLayout rLayout = (RelativeLayout) findViewById(R.id.relativeLayout_pais);
@@ -34,35 +35,35 @@ public class PaisActivity extends AppCompatActivity
         {
             case "Alemania":
             {
-                // está deprecado. Necesitaría API level 21 --> Android 5.0
+                // está deprecado. Necesitaría API level 21 (Android 5.0). Nuestros móviles Android 4.x
                 Drawable drawable = res.getDrawable(R.drawable.alemania);
                 rLayout.setBackground(drawable);
                 break;
             }
             case "Francia":
             {
-                // está deprecado. Necesitaría API level 21 --> Android 5.0
+                // está deprecado. Necesitaría API level 21 (Android 5.0). Nuestros móviles Android 4.x
                 Drawable drawable = res.getDrawable(R.drawable.francia);
                 rLayout.setBackground(drawable);
                 break;
             }
             case "Inglaterra":
             {
-                // está deprecado. Necesitaría API level 21 --> Android 5.0
+                // está deprecado. Necesitaría API level 21 (Android 5.0). Nuestros móviles Android 4.x
                 Drawable drawable = res.getDrawable(R.drawable.inglaterra);
                 rLayout.setBackground(drawable);
                 break;
             }
             case "Italia":
             {
-                // está deprecado. Necesitaría API level 21 --> Android 5.0
+                // está deprecado. Necesitaría API level 21 (Android 5.0). Nuestros móviles Android 4.x
                 Drawable drawable = res.getDrawable(R.drawable.italia);
                 rLayout.setBackground(drawable);
                 break;
             }
             case "Portugal":
             {
-                // está deprecado. Necesitaría API level 21 --> Android 5.0
+                // está deprecado. Necesitaría API level 21 (Android 5.0). Nuestros móviles Android 4.x
                 Drawable drawable = res.getDrawable(R.drawable.portugal);
                 rLayout.setBackground(drawable);
                 break;
@@ -72,6 +73,8 @@ public class PaisActivity extends AppCompatActivity
 
     public void expresiones (View view)
     {
+        Intent intent = new Intent(this, ExpresionesActivity.class);
+        startActivity(intent);
     }
 
     public void evaluacion (View view)

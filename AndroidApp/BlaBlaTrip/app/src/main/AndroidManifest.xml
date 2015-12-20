@@ -26,11 +26,14 @@
         <activity
             android:name=".ValoracionActivity"
             android:label="@string/title_activity_valoracion" />
-
-
+        <!-- PAIS -->
         <activity
             android:name=".PaisActivity"
-            android:label="@string/title_activity_pais"/>
+            android:label="@string/title_activity_pais" />
+        <!-- EXPRESIONES -->
+        <activity
+            android:name=".ExpresionesActivity"
+            android:label="@string/title_activity_expresiones"/>
     </application>
 
 </manifest>

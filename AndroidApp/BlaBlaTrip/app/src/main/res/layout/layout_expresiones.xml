@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/layout_expresiones"
+    tools:context="es.tta.blablatrip.ExpresionesActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/basico"
+        android:textColor="#000"
+        android:id="@+id/bt_basico"
+        android:text="@string/bt_basicas" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/salud"
+        android:textColor="#000"
+        android:id="@+id/bt_salud"
+        android:text="@string/bt_salud"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/bt_basico"
+        android:layout_toEndOf="@+id/bt_basico" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/compra"
+        android:textColor="#000"
+        android:id="@+id/bt_comprar"
+        android:text="@string/bt_compras"
+        android:layout_below="@+id/bt_basico"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/bt_salud"
+        android:layout_toStartOf="@+id/bt_salud" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/comer"
+        android:textColor="#000"
+        android:id="@+id/bt_comer"
+        android:text="@string/bt_comer"
+        android:layout_alignTop="@+id/bt_comprar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/bt_comprar"
+        android:layout_toEndOf="@+id/bt_comprar" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/hospedaje"
+        android:textColor="#000"
+        android:id="@+id/bt_hospedaje"
+        android:text="@string/bt_hospedaje"
+        android:layout_below="@+id/bt_comprar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_viajar"
+        android:drawableLeft="@drawable/viajar"
+        android:id="@+id/bt_viajar"
+        android:layout_below="@+id/bt_comer"
+        android:layout_toRightOf="@+id/bt_hospedaje"
+        android:layout_toEndOf="@+id/bt_hospedaje" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_quejas"
+        android:drawableRight="@drawable/quejas"
+        android:id="@+id/bt_quejas"
+        android:layout_below="@+id/bt_hospedaje"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_coqueteo"
+        android:drawableLeft="@drawable/coqueteo"
+        android:id="@+id/bt_coqueteo"
+        android:layout_alignTop="@+id/bt_quejas"
+        android:layout_alignLeft="@+id/bt_viajar"
+        android:layout_alignStart="@+id/bt_viajar"
+        android:layout_alignBottom="@+id/bt_quejas" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_numeros"
+        android:drawableTop="@drawable/numeros"
+        android:id="@+id/bt_numeros"
+        android:layout_below="@+id/bt_quejas"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
