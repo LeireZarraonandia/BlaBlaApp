@@ -1,109 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     android:id="@+id/layout_expresiones"
     tools:context="es.tta.blablatrip.ExpresionesActivity">
 
-    <Button
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView
+        android:id="@+id/lExpresiones_recycler_view"
+        android:layout_width="165dp"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/basico"
-        android:textColor="#000"
-        android:id="@+id/bt_basico"
-        android:text="@string/bt_basicas" />
+        card_view:cardCornerRadius="3dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        card_view:cardElevation="0.01dp"
+        android:layout_marginBottom="0dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableRight="@drawable/salud"
-        android:textColor="#000"
-        android:id="@+id/bt_salud"
-        android:text="@string/bt_salud"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/bt_basico"
-        android:layout_toEndOf="@+id/bt_basico" />
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="165dp"
+            android:layout_height="160dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/compra"
-        android:textColor="#000"
-        android:id="@+id/bt_comprar"
-        android:text="@string/bt_compras"
-        android:layout_below="@+id/bt_basico"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/bt_salud"
-        android:layout_toStartOf="@+id/bt_salud" />
+            <ImageView
+                android:id="@+id/img_thumbnail"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:layout_above="@+id/tv_species" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/comer"
-        android:textColor="#000"
-        android:id="@+id/bt_comer"
-        android:text="@string/bt_comer"
-        android:layout_alignTop="@+id/bt_comprar"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/bt_comprar"
-        android:layout_toEndOf="@+id/bt_comprar" />
+            <TextView
+                android:id="@+id/tv_species"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="2dp"
+                android:layout_gravity="bottom"
+                android:gravity="center_vertical"
+                android:background="#ff444444"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:text="Test"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableRight="@drawable/hospedaje"
-        android:textColor="#000"
-        android:id="@+id/bt_hospedaje"
-        android:text="@string/bt_hospedaje"
-        android:layout_below="@+id/bt_comprar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        </RelativeLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bt_viajar"
-        android:drawableLeft="@drawable/viajar"
-        android:id="@+id/bt_viajar"
-        android:layout_below="@+id/bt_comer"
-        android:layout_toRightOf="@+id/bt_hospedaje"
-        android:layout_toEndOf="@+id/bt_hospedaje" />
+    </android.support.v7.widget.CardView>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bt_quejas"
-        android:drawableRight="@drawable/quejas"
-        android:id="@+id/bt_quejas"
-        android:layout_below="@+id/bt_hospedaje"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bt_coqueteo"
-        android:drawableLeft="@drawable/coqueteo"
-        android:id="@+id/bt_coqueteo"
-        android:layout_alignTop="@+id/bt_quejas"
-        android:layout_alignLeft="@+id/bt_viajar"
-        android:layout_alignStart="@+id/bt_viajar"
-        android:layout_alignBottom="@+id/bt_quejas" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bt_numeros"
-        android:drawableTop="@drawable/numeros"
-        android:id="@+id/bt_numeros"
-        android:layout_below="@+id/bt_quejas"
-        android:layout_centerHorizontal="true" />
-
-</RelativeLayout>
+</LinearLayout>
