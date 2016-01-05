@@ -12,47 +12,241 @@
     android:id="@+id/layout_expresiones"
     tools:context="es.tta.blablatrip.ExpresionesActivity">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/lExpresiones_recycler_view"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        card_view:cardCornerRadius="3dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        card_view:cardElevation="0.01dp"
-        android:layout_marginBottom="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="10" >
 
-        <RelativeLayout
-            android:id="@+id/top_layout"
-            android:layout_width="165dp"
-            android:layout_height="160dp">
 
-            <ImageView
-                android:id="@+id/img_thumbnail"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:scaleType="fitXY"
-                android:layout_above="@+id/tv_species" />
 
-            <TextView
-                android:id="@+id/tv_species"
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="2dp"
-                android:layout_gravity="bottom"
-                android:gravity="center_vertical"
-                android:background="#ff444444"
-                android:textColor="#fff"
-                android:textSize="20dp"
-                android:text="Test"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:stretchColumns="*" >
 
-        </RelativeLayout>
+            <TableRow android:layout_weight="1" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <Button
+                        android:id="@+id/bt_basicas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/basico"
+                        android:paddingTop="90dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_centerHorizontal="true"
+                        android:layout_above="@+id/textViewBasicas"
+                        android:onClick="basicas"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/bt_basicas"
+                        android:id="@+id/textViewBasicas"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <Button
+                        android:id="@+id/bt_salud"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/salud"
+                        android:paddingTop="90dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_above="@+id/textViewSalud"
+                        android:onClick="salud"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/bt_salud"
+                        android:id="@+id/textViewSalud"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </TableRow>
 
-    </android.support.v7.widget.CardView>
+            <TableRow android:layout_weight="1" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <Button
+                        android:id="@+id/bt_numeros"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/numeros"
+                        android:ellipsize="marquee"
+                        android:paddingTop="90dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_above="@+id/textViewNumeros"
+                        android:onClick="numeros"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/bt_numeros"
+                        android:id="@+id/textViewNumeros"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <Button
+                        android:id="@+id/bt_viajar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/viajar"
+                        android:paddingTop="90dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_above="@+id/textViewViajar"
+                        android:onClick="viajar"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/bt_viajar"
+                        android:id="@+id/textViewViajar"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </TableRow>
+
+            <TableRow android:layout_weight="1" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <Button
+                        android:id="@+id/bt_comer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/comer"
+                        android:ellipsize="marquee"
+                        android:paddingTop="90dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_above="@+id/textViewComer"
+                        android:onClick="comer"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/bt_comer"
+                        android:id="@+id/textViewComer"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <Button
+                        android:id="@+id/bt_compra"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/compra"
+                        android:paddingTop="90dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_above="@+id/textViewCompra"
+                        android:onClick="compra"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/bt_viajar"
+                        android:id="@+id/textViewCompra"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </TableRow>
+            <TableRow android:layout_weight="1" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <Button
+                        android:id="@+id/bt_coqueteo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/coqueteo"
+                        android:ellipsize="marquee"
+                        android:paddingTop="90dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_above="@+id/textViewCoqueteo"
+                        android:onClick="coqueteo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/bt_coqueteo"
+                        android:id="@+id/textViewCoqueteo"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <Button
+                        android:id="@+id/bt_hospedaje"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/hospedaje"
+                        android:paddingTop="90dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_above="@+id/textViewHospedaje"
+                        android:onClick="hospedaje"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/bt_hospedaje"
+                        android:id="@+id/textViewHospedaje"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </TableRow>
+            <TableRow android:layout_weight="1" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <Button
+                        android:id="@+id/bt_quejas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/quejas"
+                        android:ellipsize="marquee"
+                        android:paddingTop="90dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_above="@+id/textViewQuejas"
+                        android:onClick="quejas"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/bt_quejas"
+                        android:id="@+id/textViewQuejas"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </TableRow>
+
+        </TableLayout>
+
+
+    </LinearLayout>
 
 </LinearLayout>
