@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:id="@+id/layout_expresiones"
+    android:id="@+id/lineLayout_expresiones"
     tools:context="es.tta.blablatrip.ExpresionesActivity">
 
     <LinearLayout
@@ -19,8 +19,6 @@
         android:orientation="vertical"
         android:weightSum="10" >
 
-
-
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -28,10 +26,10 @@
             android:orientation="horizontal"
             android:stretchColumns="*" >
 
-            <TableRow android:layout_weight="1" >
+            <TableRow android:layout_weight="1">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
                     <Button
                         android:id="@+id/bt_basicas"
                         android:layout_width="match_parent"
@@ -50,7 +48,8 @@
                         android:text="@string/bt_basicas"
                         android:id="@+id/textViewBasicas"
                         android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:onClick="basicas"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -72,7 +71,8 @@
                         android:text="@string/bt_salud"
                         android:id="@+id/textViewSalud"
                         android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:onClick="salud"/>
                 </RelativeLayout>
             </TableRow>
 
@@ -98,7 +98,8 @@
                         android:text="@string/bt_numeros"
                         android:id="@+id/textViewNumeros"
                         android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:onClick="numeros"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -120,7 +121,8 @@
                         android:text="@string/bt_viajar"
                         android:id="@+id/textViewViajar"
                         android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:onClick="viajar"/>
                 </RelativeLayout>
             </TableRow>
 
@@ -146,7 +148,8 @@
                         android:text="@string/bt_comer"
                         android:id="@+id/textViewComer"
                         android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:onClick="comer"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -165,10 +168,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="@string/bt_viajar"
+                        android:text="@string/bt_compras"
                         android:id="@+id/textViewCompra"
                         android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:onClick="compra"/>
                 </RelativeLayout>
             </TableRow>
             <TableRow android:layout_weight="1" >
@@ -193,7 +197,8 @@
                         android:text="@string/bt_coqueteo"
                         android:id="@+id/textViewCoqueteo"
                         android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:onClick="coqueteo"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -215,7 +220,8 @@
                         android:text="@string/bt_hospedaje"
                         android:id="@+id/textViewHospedaje"
                         android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:onClick="hospedaje"/>
                 </RelativeLayout>
             </TableRow>
             <TableRow android:layout_weight="1" >
@@ -240,12 +246,12 @@
                         android:text="@string/bt_quejas"
                         android:id="@+id/textViewQuejas"
                         android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true" />
+                        android:layout_centerHorizontal="true"
+                        android:onClick="quejas"/>
                 </RelativeLayout>
             </TableRow>
 
         </TableLayout>
-
 
     </LinearLayout>
 
