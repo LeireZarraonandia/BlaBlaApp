@@ -21,11 +21,11 @@ public class ExpresionesActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_expresiones);
 
-        LinearLayout relaLayout = (LinearLayout) findViewById(R.id.lineLayout_expresiones);
+        /*LinearLayout relaLayout = (LinearLayout) findViewById(R.id.lineLayout_expresiones);
         Resources res = getResources();
         // está deprecado. Necesitaria API level 21 --> Android 5.0
         Drawable drawable = res.getDrawable(R.drawable.fondoblanco);
-        relaLayout.setBackground(drawable);
+        relaLayout.setBackground(drawable);*/
     }
 
     public void basicas (View view)
