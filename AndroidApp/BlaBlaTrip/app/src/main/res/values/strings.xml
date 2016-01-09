@@ -24,6 +24,7 @@
     <string name="title_activity_pais">PAÍS</string>
     <string name="bt_evaluacion">Evaluación</string>
     <string name="bt_expresiones">Expresiones</string>
+    <string name="bt_descarga">Descargar</string>
 
     <!-- EXPRESIONES -->
     <string name="title_activity_expresiones">EXPRESIONES</string>

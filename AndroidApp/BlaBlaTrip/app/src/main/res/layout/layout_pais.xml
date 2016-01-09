@@ -10,6 +10,19 @@
     tools:context="es.tta.blablatrip.PaisActivity"
     android:id="@+id/relativeLayout_pais">
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_descarga"
+        android:id="@+id/bt_descarga"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/white"
+        android:onClick="descargar"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,6 +32,7 @@
         android:layout_centerHorizontal="true"
         android:textSize="30dp"
         android:textColor="@color/white"/>
+
 
     <Button
         style="?android:attr/buttonStyleSmall"
