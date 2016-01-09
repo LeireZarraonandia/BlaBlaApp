@@ -1,0 +1,95 @@
+{
+		total: 10,
+	    test: [
+	          {
+	          question:"¿Cómo pedirías ayuda?",
+	          resp: [
+	                 "Come voê está?",
+	                 "Você pode me ajudar,, por favor?",
+	                 "Como você se chama?"
+	                 ],
+	                  correct: "1"
+				},
+				{
+				question:"Si tu nombre es Pablo. ¿Cuál es la manera correcta de presentarte?",
+				resp: [
+				       "Meu nome é Pablo",
+				       "Quanto custa um quarto para Pablo pessoa?",
+				       "Eu sou do Pablo"
+				       ],
+						correct: "0"
+				},
+				{
+				question:".¿Cómo preguntarías de qué trabaja alguien?",
+				resp: [
+				       "O que você faz na vida?",
+				       "Deixe-me sozinho?",
+				       "Como eu façco para chegar?"
+				       ],
+				       	correct: "0"
+				},
+				{
+				question:"¿Cómo expresarías que quieres llegar a Lisboa?",
+				resp: [
+				       "Quanto custa um quarto para Lisboa pessoa?",
+				       "Posso ver o cardápio, Lisboa?",
+				       "Como eu façco para chegar a Lisboa?"
+				       ],
+						correct: "2"
+				},
+				{
+				question:".¿Cómo dirías en un restaurante que lo que te han servido no es lo que has pedido?",
+				resp: [
+				       "Pode ficar com o troco",
+				       "A comida estava deliciosa",
+				       "Eu não pedi isso"
+				       ],
+						correct: "2"
+				},
+				{
+				question:"Cuando alguien tiene que girar a la izquierda le guiaremos utilizando:",
+				resp: [
+				       "Vire á esquerda",
+				       "Siga em frente",
+				       "Vire á direita"
+				       ],
+						correct: "0"
+				},
+				{
+				question:"¿Cómo dirías que vas a comprar algo?",
+				resp: [
+						"Estou apenas olhando",
+						"Eu vou levar",
+						"Eu gostaria devolver"
+						],
+						 correct: "1"
+				},
+				{
+				question:"¿Cómo expresarías al médico que  tu enfermedad de estómago ha empeorado?",
+				resp: [
+						"Estou me sentindo pior",
+						"Sinto-me um pouco melhor",
+						"Estou como antes"
+						],
+						 correct: "0"
+				},
+				{
+				question:"¿De que manera preguntarías el precio de algún objeto?",
+				resp: [
+				       "Você tm alguma coisa mais barata?",
+				       "Quanto custa isso?",
+				       "Você pode lme dar uma sacola, por favor?"
+				       ],
+						correct: "1"
+				},
+				{
+				question:"¿Cómo le dIrías al médico que tienes fiebre?",
+				resp: [
+				       "Estou com febre",
+				       "Estou resfriadoo",
+				       "Estou como antes"
+				       ],
+						correct: "0"
+				}
+	    ]
+	}

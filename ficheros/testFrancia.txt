@@ -1,0 +1,95 @@
+{
+		total: 10,
+	    test: [
+	           {
+	           question:"¿Cómo preguntarías a alguien que edad tiene?",
+			   resp: [
+			          "Quel âge as-tu?",
+			          "Quel est ton `poids?",
+			          "Combien tu?"
+			          ],
+						correct: "0"
+	           },
+	           {
+	           question:"¿Cómo preguntarías por el encargado de un local o tienda?",
+	           resp: [
+	                  "Serait îl posible manger quelque chose?",
+	                  "On pourrait parlez en privé?",
+	                  "Qui est le reponsable ici?"
+	                  ],
+						correct: "2"
+				},
+				{
+				question:"¿Cómo le dirías a una persona que llame a una ambulancia?",
+				resp: [
+				       "pouvez vous appeler un taxi?",
+				       "Appelez une ambulance",
+				       "Vous pouvez appeler un médecin?"		
+				       ],
+						correct: "1"
+				},
+				{
+				question:"¿Cómo de dirías a un médico 'me duele aquí?'",
+				resp: [
+						"Ça fait toujours mal",
+						"Ça fait mal que pendant la nuit",
+						"J’ai mal là"
+						],
+						 correct: "2"
+				},
+				{
+				question:"¿Cómo preguntarías cuánto cuesta algo?",
+				resp: [
+				       "Combien ça coûte?",
+				       "À ce moment-là se ferme?",
+				       "Lorsque ce compteur?"
+				       ],
+						correct: "0"
+				},
+				{
+				question:"¿Cómo preguntarías en un hotel si el desayuno está incluido?",
+				resp: [
+				       "Combien coûte une chambre?",
+				       "Puis-je payer par carte ?",
+				       "Le petit-déjeuner est inclus?"
+				       ],
+						correct: "2"
+				},
+				{
+				question:"¿Cómo dirías el número dos en Francés?",
+				resp: [
+				       "Trois",
+				       "Cinq",
+				       "Deux"	
+				       ],
+						correct: "2"
+				},
+				{
+				question:"¿Cómo dirías en un restaurante que lo que te han traído no es lo que habías pedido?",
+				resp: [
+				       "Ce n’est pas ce que j’ai demandé ",
+				       "La nourriture est très riche",
+				       "La nourriture est froide"
+				       ],
+				       	correct: "0"
+				},
+				{
+				question:"¿Cómo comunicaría a alguien que se encuentra perdido?",
+				resp: [
+				       "Je suis fatigué",
+				       "Je suis étourdie",
+				       "Je suis perdu"
+				       ],
+				       	correct: "2"
+				},
+				{
+				question:"¿Cómo preguntarías a alguien si quiere bailar?",
+				resp: [
+				       "Vous voulez danser?",
+				       "Vous souhaitez boire?",
+				       "Vous êtes froid?"
+				       ],
+				       	correct: "0"
+				}
+	    ]
+	}

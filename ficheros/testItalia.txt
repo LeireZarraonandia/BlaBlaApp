@@ -1,0 +1,95 @@
+ {
+		total: 10,
+	    test: [
+	           {
+	           question:".¿Cómo pedirías ayuda?",
+	           resp: [
+	                  "Non capisco",
+	                  "Puòaiutarmi? ",
+	                  "Come va?"	
+	                  ],
+						correct: "1"
+				},
+				{
+				question:"¿De qué manera expresarías que has estado esperando por más de una hora?",
+				resp: [
+				       "Stiamoaspettando da più di un´ora",
+				       "E-davveroinammissibile",
+				       "Rivoglio in dietro i mieisoldi"
+						],
+						  correct: "0"
+				},
+				{
+				question:"¿Cómo le dirías al médico dónde te duele?",
+				resp: [
+				       "Ho la febbre",
+				       "Ho ilraffreddore",
+				       "Mifa malequi"
+				       ],
+						correct: "2"
+				},
+				{
+				question:"¿De que manera expresarías que vas a comprar algo?",
+				resp: [
+				       "Lo compro",
+				       "Sto dando unócchiata",
+				       "Quanto costa questo?"
+				       ],
+						correct: "0"
+				},
+				{
+				question:"¿Cómo expresarías que quieres ver el menú?",
+				resp: [
+				       "Scusi, vorremmo ordinare",
+				       "Il conto, per favore",
+				       "Mi porta il menú"
+				       ],
+						correct: "2"
+				},
+				{
+				question:"¿De qué forma preguntarías si hay habitaciones libres?",
+				resp: [
+				       "Quanto costa una camera per…. Persone?",
+				       "La colazione è inclusa?",
+				       "Avetecamera libre?"
+				       ],
+						correct: "2"
+				},
+				{
+				question:"¿Cómo dirías que estás perdido?",
+				resp: [
+				       "Mi sonoperso",
+				       "Come si arriba…",
+				       "Gira a sinistra"
+				       ],
+						correct: "0"
+				},
+				{
+				question:"¿Cómo le dirías a alguien que quieres invitarle a una copa?",
+				resp: [
+				       "Cosa fai de bello nella vita?",
+				       "Possoofffrirtiqualcosa da bere?",
+				       "Ti Va di ballare?"
+				       ],
+				       	correct: "1"
+				},
+				{
+				question:"¿Cómo pedirías la cuenta?",
+				resp: [
+				       "Ilcibo era delizioso",
+				       "Scusi, vorremmo ordinare",
+				       "Il conto, per favore"
+				       ],
+				       	correct: "2"
+				},
+				{
+				question:"¿Cómo le comunicarías al médico que tienes tos?",
+				resp: [
+				       "Ho la tosse",
+				       "Ho la febbre",
+				       "Ho ilraffreddore"
+				       ],
+						correct: "0"
+				}
+	    ]
+	}

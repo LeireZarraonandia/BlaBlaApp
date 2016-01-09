@@ -1,0 +1,156 @@
+{
+		info:[
+{
+	apartado: "Básicas",
+	nFilas: 23,
+	lineas:[
+			
+			{castellano:"¿Podría ayudarme?",idioma:"Vous pouvez m’aider, s’il vous plaît?",audio:appConstants.serverURL+"FR-Bas-01.mp3"},
+			{castellano:"No entiendo",idioma:"Je ne comprends pas",audio:appConstants.serverURL+"FR-Bas-02.mp3"},
+			{castellano:"Hola",idioma:"Bonjour ",audio:appConstants.serverURL+"FR-Bas-03.mp3"},
+			{castellano:"Buenos días",idioma:"Bonjour",audio:appConstants.serverURL+"FR-Bas-04.mp3"},
+			{castellano:"Buenas tardes",idioma:"Bonsoir",audio:appConstants.serverURL+"FR-Bas-05.mp3"},
+			{castellano:"Buenas noches",idioma:"Bonne nuit",audio:appConstants.serverURL+"FR-Bas-06.mp3"},
+			{castellano:"¿Cómo estás?",idioma:"Comment vas-tu?",audio:appConstants.serverURL+"FR-Bas-07.mp3"},
+			{castellano:"Bien, gracias",idioma:"Bien, merci",audio:appConstants.serverURL+"FR-Bas-08.mp3"},
+			{castellano:"¿Cómo te llamas?",idioma:"Comment t’apelles-tu?",audio:appConstants.serverURL+"FR-Bas-09.mp3"},
+			{castellano:"Me llamo… ",idioma:"Je m’apelle…",audio:appConstants.serverURL+"FR-Bas-10.mp3"},
+			{castellano:"¿De qué país vienes? ",idioma:"D’où viens-tu?",audio:appConstants.serverURL+"FR-Bas-11.mp3"},
+			{castellano:"Soy de…",idioma:"Je viens de…",audio:appConstants.serverURL+"FR-Bas-12.mp3"},
+			{castellano:"¿Cuántos años tienes?",idioma:"Quel âge as-tu?",audio:appConstants.serverURL+"FR-Bas-13.mp3"},
+			{castellano:"Tengo … años",idioma:"J’ai……ans",audio:appConstants.serverURL+"FR-Bas-14.mp3"},
+			{castellano:"Sí",idioma:"Qui",audio:appConstants.serverURL+"FR-Bas-15.mp3"},
+			{castellano:"No",idioma:"Non",audio:appConstants.serverURL+"FR-Bas-16.mp3"},
+			{castellano:"Por favor",idioma:"S’il vous plait",audio:appConstants.serverURL+"FR-Bas-17.mp3"},
+			{castellano:"Muchas  gracias",idioma:"Merci beacoup",audio:appConstants.serverURL+"FR-Bas-18.mp3"},
+			{castellano:"De nada",idioma:"Je t’en prie",audio:appConstants.serverURL+"FR-Bas-19.mp3"},
+			{castellano:"Lo siento",idioma:"Je suis désolé(e)",audio:appConstants.serverURL+"FR-Bas-20.mp3"},
+			{castellano:"Disculpe ",idioma:"Excusez-moi",audio:appConstants.serverURL+"FR-Bas-21.mp3"},
+			{castellano:"Fue un placer conocerte",idioma:"Ravi(e) de vous avoir rencontré",audio:appConstants.serverURL+"FR-Bas-22.mp3"},
+			{castellano:"Adiós ",idioma:"Au revoir!",audio:appConstants.serverURL+"FR-Bas-23.mp3"}			
+		]
+},{		
+	apartado: "Salud",
+	nFilas: 13,
+	lineas:[
+			{castellano:"Necesito ir al hospital",idioma:"Je dois me rendre à l’hôspital",audio:appConstants.serverURL+"FR-Sal-01.mp3"},
+			{castellano:"Me siento mal",idioma:"Je me sens malade",audio:appConstants.serverURL+"FR-Sal-02.mp3"},
+			{castellano:"Necesito ver a un doctor inmediatamente",idioma:"Je dois voir un médecin inmédiatement",audio:appConstants.serverURL+"FR-Sal-03.mp3"},
+			{castellano:"Ayuda",idioma:"Au seccours!",audio:appConstants.serverURL+"FR-Sal-04.mp3"},
+			{castellano:"Llamen a una ambulancia",idioma:"Appelez une ambulance",audio:appConstants.serverURL+"FR-Sal-05.mp3"},
+			{castellano:"Me duele aquí",idioma:"J’ai mal là",audio:appConstants.serverURL+"FR-Sal-06.mp3"},
+			{castellano:"Tengo fiebre",idioma:"J’ai de la fièvre",audio:appConstants.serverURL+"FR-Sal-07.mp3"},
+			{castellano:"Tengo un resfriado",idioma:"J’ai un rhume",audio:appConstants.serverURL+"FR-Sal-08.mp3"},
+			{castellano:"¿Cuántas veces al día debo tomar esto?",idioma:"Combien de fois par jour dois-je en prendre?",audio:appConstants.serverURL+"FR-Sal-09.mp3"},
+			{castellano:"Me siento un poco mejor",idioma:"Je me sens un peu mieux",audio:appConstants.serverURL+"FR-Sal-10.mp3"},
+			{castellano:"Ha empeorado",idioma:"C’est pire",audio:appConstants.serverURL+"FR-Sal-11.mp3"},
+			{castellano:"Está igual que antes",idioma:"Ill n’y a pas de changement",audio:appConstants.serverURL+"FR-Sal-12.mp3"},
+			{castellano:"Tengo tos",idioma:"Je tousse",audio:appConstants.serverURL+"FR-Sal-13.mp3"}										
+			]
+},{	
+	apartado: "Compras",
+	nFilas: 8,
+	lineas:[	
+			{castellano:"¿Cuánto cuesta?",idioma:"Combien ça coûte?",audio:appConstants.serverURL+"FR-Com-01.mp3"},
+			{castellano:"¿Tiene algo que sea más barato?",idioma:"Avez-vous quelque chose de moins cher?",audio:appConstants.serverURL+"FR-Com-02.mp3"},
+			{castellano:"¿A qué hora abre/cierra?",idioma:"À quelle heure ouvrez/fermez vous?",audio:appConstants.serverURL+"FR-Com-03.mp3"},
+			{castellano:"Sólo estoy mirando",idioma:"Je regarde, c’est tout",audio:appConstants.serverURL+"FR-Com-04.mp3"},
+			{castellano:"Lo compro",idioma:"Je le prends",audio:appConstants.serverURL+"FR-Com-05.mp3"},
+			{castellano:"¿Me puede dar una bolsa, por favor?",idioma:"Je peux avoir un sac, s’il vous plaît?",audio:appConstants.serverURL+"FR-Com-06.mp3"},
+			{castellano:"Me gustaría devolver esto",idioma:"Je voudrais échanger cet article",audio:appConstants.serverURL+"FR-Com-07.mp3"},
+			{castellano:"¿Dónde se encuentran los probadores?",idioma:"Où sont les cabines d’essayage?",audio:appConstants.serverURL+"FR-Com-08.mp3"}		
+			]
+},{			
+	apartado: "Comer",
+	nFilas: 7,
+	lineas:[
+			{castellano:"Me gustaría reservar una mesa para … personas a las …",idioma:"Je voudrais réserver une table pour …. à … ",audio:appConstants.serverURL+"FR-SalirComer-01.mp3"},
+			{castellano:"¿Puedo ver el menú?",idioma:"Je peux avoir la carte?",audio:appConstants.serverURL+"FR-SalirComer-02.mp3"},
+			{castellano:"Disculpe, nos gustaría pedir",idioma:"Excusez moi, nous aimerions commmander, s’il vous plaît?",audio:appConstants.serverURL+"FR-SalirComer-03.mp3"},
+			{castellano:"Nos gustaría pagar la cuenta",idioma:"Nous voudrions payer, s’il vous plaît?",audio:appConstants.serverURL+"FR-SalirComer-04.mp3"},
+			{castellano:"Quédese con el cambio",idioma:"Gardez la monnaie",audio:appConstants.serverURL+"FR-SalirComer-05.mp3"},
+			{castellano:"La comida estuvo deliciosa",idioma:"Le repas était délicieux",audio:appConstants.serverURL+"FR-SalirComer-06.mp3"},
+			{castellano:"Yo no pedí esto",idioma:"Ce n’est pas ce que j’ai demandé",audio:appConstants.serverURL+"FR-SalirComer-07.mp3"}		
+			]
+},{		
+	apartado: "Hospedaje",
+	nFilas: 8,
+	lineas:[	
+			{castellano:"¿Dónde puedo encontrar …?",idioma:"Où puis je trouver …?",audio:appConstants.serverURL+"FR-Hos-01.mp3"},
+			{castellano:"¿Tiene habitaciones disponibles?",idioma:"Avez vous des chambres libres?",audio:appConstants.serverURL+"FR-Hos-02.mp3"},
+			{castellano:"¿Cuál es el precio de una habitación para … personas?",idioma:"Combien coûte une chambre pour … personnes?",audio:appConstants.serverURL+"FR-Hos-03.mp3"},
+			{castellano:"Me gustaría reservar",idioma:"Je voudrais réserver",audio:appConstants.serverURL+"FR-Hos-04.mp3"},
+			{castellano:"¿El desayuno está incluido?",idioma:"Le petit-déjeuner est inclus?",audio:appConstants.serverURL+"FR-Hos-05.mp3"},
+			{castellano:"No hay agua caliente",idioma:"Il n’y a pas d’eau chaude",audio:appConstants.serverURL+"FR-Hos-06.mp3"},
+			{castellano:"El aire acondicionado no funciona",idioma:"La climatisation ne fonctionne pas",audio:appConstants.serverURL+"FR-Hos-07.mp3"},
+			{castellano:"Mi llave no funciona",idioma:"Ma clé ne fonctionne pas",audio:appConstants.serverURL+"FR-Hos-08.mp3"}		
+			]
+},{		
+	apartado: "Números",
+	nFilas: 12,
+	lineas:[		
+			{castellano:"Uno",idioma:"Un",audio:appConstants.serverURL+"FR-Num-01.mp3"},
+			{castellano:"Dos",idioma:"Deux ",audio:appConstants.serverURL+"FR-Num-02.mp3"},
+			{castellano:"Tres ",idioma:"Trois",audio:appConstants.serverURL+"FR-Num-03.mp3"},
+			{castellano:"Cuatro",idioma:"Quatre",audio:appConstants.serverURL+"FR-Num-04.mp3"},
+			{castellano:"Cinco",idioma:"Cinq",audio:appConstants.serverURL+"FR-Num-05.mp3"},
+			{castellano:"Seis",idioma:"Six ",audio:appConstants.serverURL+"FR-Num-06.mp3"},
+			{castellano:"Siete	",idioma:"Sept",audio:appConstants.serverURL+"FR-Num-07.mp3"},
+			{castellano:"Ocho ",idioma:"Huit",audio:appConstants.serverURL+"FR-Num-08.mp3"},
+			{castellano:"Nueve ",idioma:"Neuf",audio:appConstants.serverURL+"FR-Num-09.mp3"},
+			{castellano:"Diez",idioma:"Dix",audio:appConstants.serverURL+"FR-Num-10.mp3"},
+			{castellano:"Cien ",idioma:"Cent",audio:appConstants.serverURL+"FR-Num-11.mp3"},
+			{castellano:"Millón ",idioma:"Million",audio:appConstants.serverURL+"FR-Num-13.mp3"}
+			
+			]
+},{
+			
+	apartado: "Viajar",
+	nFilas: 11,
+	lineas:[			
+			{castellano:"Estoy perdido",idioma:"Je suis perdu",audio:appConstants.serverURL+"FR-Via-01.mp3"},
+			{castellano:"¿Me puede mostrar su ubicación en el mapa?",idioma:"Vous pouvez me monter où c’est sour le plan?",audio:appConstants.serverURL+"FR-Via-02.mp3"},
+			{castellano:"¿Dónde puedo encontrar …?",idioma:"Oú puis-je trouver …?",audio:appConstants.serverURL+"FR-Via-03.mp3"},
+			{castellano:"¿Cómo llego a …?",idioma:"Comment je peux me rendre …?",audio:appConstants.serverURL+"FR-Via-04.mp3"},
+			{castellano:"Gire a la izquierda ",idioma:"Tournez á la gauche",audio:appConstants.serverURL+"FR-Via-05.mp3"},
+			{castellano:"Gire a la derecha",idioma:"Tournez á la droite ",audio:appConstants.serverURL+"FR-Via-06.mp3"},
+			{castellano:"Siga derecho",idioma:"Allez tout droit",audio:appConstants.serverURL+"FR-Via-07.mp3"},
+			{castellano:"Regrese",idioma:"Faites demi-tour",audio:appConstants.serverURL+"FR-Via-08.mp3"},
+			{castellano:"¿Dónde puedo comprar un ticket para el autobús/tren?",idioma:"Où puis-je acheter un ticket de bus/train?",audio:appConstants.serverURL+"FR-Via-00.mp3"},
+			{castellano:"¿Está ocupado este asiento?",idioma:"Ce siège est-il pris?",audio:appConstants.serverURL+"FR-Via-10.mp3"},
+			{castellano:"Ese es mi asiento",idioma:"C’est mon siège",audio:appConstants.serverURL+"FR-Via-11.mp3"}
+			
+			]
+},{	
+	apartado: "Quejas",
+	nFilas: 5,
+	lineas:[
+			{castellano:"Me gustaría realizar una queja",idioma:"Je voudrais faire une réclamation",audio:appConstants.serverURL+"FR-Que-01.mp3"},
+			{castellano:"¿Quién es el encargado?",idioma:"Qui est le reponsable ici?",audio:appConstants.serverURL+"FR-Que-02.mp3"},
+			{castellano:"Esto es totalmente inaceptable",idioma:"C’est absolument inacceptable",audio:appConstants.serverURL+"FR-Que-03.mp3"},
+			{castellano:"Quiero mi dinero de vuelta",idioma:"J’exige un remboursement",audio:appConstants.serverURL+"FR-Que-04.mp3"},
+			{castellano:"Hemos estado esperando por más de una hora",idioma:"Cela fait plus d’une heure que nous attendons",audio:appConstants.serverURL+"FR-Que-05.mp3"},					
+		]
+	 },{		
+	apartado: "Coqueteo",
+	nFilas: 15,
+	lineas:[					
+			{castellano:"¿Te puedo invitar a algo para beber?",idioma:"Je peux vous offrir un verre?",audio:appConstants.serverURL+"FR-Coq-01.mp3"},
+			{castellano:"¿A qué te dedicas?",idioma:"Vous faites quoi dans la vie?",audio:appConstants.serverURL+"FR-Coq-02.mp3"},
+			{castellano:"¿Quieres bailar?",idioma:"Vous voulez danser?",audio:appConstants.serverURL+"FR-Coq-03.mp3"},
+			{castellano:"¿Te gustaría salir un poco?",idioma:"On sort prendre l’air?",audio:appConstants.serverURL+"FR-Coq-04.mp3"},
+			{castellano:"¿Vamos a mi casa o a la tuya?",idioma:"Chez toi ou chez moi?",audio:appConstants.serverURL+"FR-Coq-05.mp3"},
+			{castellano:"¿Te gustaría ver una película en mi casa?",idioma:"Tu veux venir voir un film chez moi?",audio:appConstants.serverURL+"FR-Coq-06.mp3"},
+			{castellano:"¿Tienes algún plan para esta noche?",idioma:"Tu as quelque chose de prévu ce soir?",audio:appConstants.serverURL+"FR-Coq-07.mp3"},
+			{castellano:"¿Te gustaría ir a tomar un café?",idioma:"Tu veux aller prendre un café?",audio:appConstants.serverURL+"FR-Coq-08.mp3"},
+			{castellano:"¿Te llevo/acompaño a tu casa?",idioma:"Je peux te conduire/ramener chez toi?",audio:appConstants.serverURL+"FR-Coq-09.mp3"},
+			{castellano:"¡Me lo pasé muy bien! ¡Buenas noches!",idioma:"Merci pour cette charmante soirée. Bonne nuit!",audio:appConstants.serverURL+"FR-Coq-10.mp3"},
+			{castellano:"Eres muy divertido/a",idioma:"Tu es tellement drôle!",audio:appConstants.serverURL+"FR-Coq-11.mp3"},
+			{castellano:"Bailas muy bien!",idioma:"Tu es un trés un bone danseur!",audio:appConstants.serverURL+"FR-Coq-12.mp3"},
+			{castellano:"Ha sido un gusto hablar contigo",idioma:"C’étais sympa de discuter avec toi",audio:appConstants.serverURL+"FR-Coq-13.mp3"},
+			{castellano:"No estoy interesado/a",idioma:"Je ne suis pas intéressé(e)",audio:appConstants.serverURL+"FR-Coq-14.mp3"},
+			{castellano:"Déjame en paz",idioma:"Laisse-moi tranquille",audio:appConstants.serverURL+"FR-Coq-15.mp3"}
+			]
+	}
+]
+}
