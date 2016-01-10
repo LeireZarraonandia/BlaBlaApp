@@ -14,7 +14,8 @@ import android.widget.RelativeLayout;
 
 public class InicioActivity extends AppCompatActivity
 {
-    public final static String EXTRA_ID_INICIO = "es.tta.blablatrip.id_inicio";
+    public final static String EXTRA_ID_INICIO = "es.tta.blablatrip.id_inicio";//ESTO QUE ES¿¿¿¿
+    public static String pais=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -47,6 +48,7 @@ public class InicioActivity extends AppCompatActivity
         Button bt_alemania = (Button) findViewById(R.id.bt_alemania);
         saveText(bt_alemania.getText().toString());
         intent.putExtra(EXTRA_ID_INICIO, bt_alemania.getText().toString());
+        pais="Alemania";
         startActivity(intent);
     }
     public void francia (View view)
@@ -55,6 +57,7 @@ public class InicioActivity extends AppCompatActivity
         Button bt_francia = (Button) findViewById(R.id.bt_francia);
         saveText(bt_francia.getText().toString());
         intent.putExtra(EXTRA_ID_INICIO, bt_francia.getText().toString());
+        pais="Francia";
         startActivity(intent);
     }
     public void inglaterra (View view)
@@ -63,6 +66,7 @@ public class InicioActivity extends AppCompatActivity
         Button bt_inglaterra = (Button) findViewById(R.id.bt_inglaterra);
         saveText(bt_inglaterra.getText().toString());
         intent.putExtra(EXTRA_ID_INICIO, bt_inglaterra.getText().toString());
+        pais="Inglaterra";
         startActivity(intent);
     }
     public void italia (View view)
@@ -71,6 +75,7 @@ public class InicioActivity extends AppCompatActivity
         Button bt_italia = (Button) findViewById(R.id.bt_italia);
         saveText(bt_italia.getText().toString());
         intent.putExtra(EXTRA_ID_INICIO, bt_italia.getText().toString());
+        pais="Italia";
         startActivity(intent);
     }
     public void portugal (View view)
@@ -79,6 +84,7 @@ public class InicioActivity extends AppCompatActivity
         Button bt_portugal = (Button) findViewById(R.id.bt_portugal);
         saveText(bt_portugal.getText().toString());
         intent.putExtra(EXTRA_ID_INICIO, bt_portugal.getText().toString());
+        pais="Portugal";
         startActivity(intent);
     }
 

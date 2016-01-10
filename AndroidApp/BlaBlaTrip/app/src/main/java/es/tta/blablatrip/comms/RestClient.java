@@ -17,16 +17,19 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+
+import es.tta.blablatrip.InicioActivity;
+
 /**
  * Created by leire on 9/01/16.
  */
 public class RestClient {
-    private final static String AUTH ="Authorization";
-    private final String baseUrl;
+
+    private final String baseUrl=null;
 
 
-    public RestClient(String baseUrl){
-        this.baseUrl = baseUrl;
+    public RestClient(){
+
     }
 
 
@@ -54,23 +57,23 @@ public class RestClient {
         }
     }
 
-    public JSONObject getTest (String pais) throws IOException, JSONException{
-        String path="http://51.254.127.111/BlaBlaTrip/test"+pais+".txt";
+    public JSONObject getTest () throws IOException, JSONException{
+        String path="http://51.254.127.111/BlaBlaTrip/test"+ InicioActivity.pais+".txt";
         return new JSONObject(getString(path));
     }
 
-    public JSONObject getExpresiones (String pais) throws IOException, JSONException{
-        String path="http://51.254.127.111/BlaBlaTrip/expresiones"+pais+".txt";
+    public JSONObject getExpresiones () throws IOException, JSONException{
+        String path="http://51.254.127.111/BlaBlaTrip/expresiones"+InicioActivity.pais+".txt";
         return new JSONObject(getString(path));
     }
 
-    public void descargarTest (String pais){
+    public void descargarTest (){
         HttpURLConnection conn = null;
-        String path="http://51.254.127.111/BlaBlaTrip/test"+pais+".txt";
+        String path="http://51.254.127.111/BlaBlaTrip/test"+InicioActivity.pais+".txt";
         try{
             conn = getConnection(path);
             File SDCardRoot = Environment.getExternalStorageDirectory();
-            File file = new File(SDCardRoot,"test"+pais+".txt");
+            File file = new File(SDCardRoot,"test"+InicioActivity.pais+".txt");
             FileOutputStream fileOutput = new FileOutputStream(file);
             InputStream inputStream = conn.getInputStream();
             int totalSize = conn.getContentLength();
@@ -94,13 +97,13 @@ public class RestClient {
 
         }
 
-    public void descargarExpresiones (String pais){
+    public void descargarExpresiones (){
         HttpURLConnection conn = null;
-        String path="http://51.254.127.111/BlaBlaTrip/test"+pais+".txt";
+        String path="http://51.254.127.111/BlaBlaTrip/test"+InicioActivity.pais+".txt";
         try{
             conn = getConnection(path);
             File SDCardRoot = Environment.getExternalStorageDirectory();
-            File file = new File(SDCardRoot,"expresiones"+pais+".txt");
+            File file = new File(SDCardRoot,"expresiones"+InicioActivity.pais+".txt");
             FileOutputStream fileOutput = new FileOutputStream(file);
             InputStream inputStream = conn.getInputStream();
             int totalSize = conn.getContentLength();

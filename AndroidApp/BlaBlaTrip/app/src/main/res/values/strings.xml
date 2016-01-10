@@ -38,4 +38,7 @@
     <string name="bt_coqueteo">Coqueteo</string>
     <string name="bt_numeros">Números</string>
 
+    <!-- TEST -->
+    <string name="bt_send">Aceptar</string>
+
 </resources>

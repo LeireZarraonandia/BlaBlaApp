@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="es.tta.blablatrip">
+    package="es.tta.blablatrip" >
 
     <!-- Dar permisos de Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,8 +11,8 @@
         android:icon="@drawable/blablatrip"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".InicioActivity">
+        android:theme="@style/AppTheme" >
+        <activity android:name=".InicioActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +34,9 @@
         <!-- EXPRESIONES -->
         <activity
             android:name=".ExpresionesActivity"
-            android:label="@string/title_activity_expresiones"/>
+            android:label="@string/title_activity_expresiones" />
+        <activity android:name=".TestActivity" >
+        </activity>
     </application>
 
 </manifest>
