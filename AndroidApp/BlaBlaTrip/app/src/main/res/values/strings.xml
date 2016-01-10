@@ -39,6 +39,9 @@
     <string name="bt_numeros">Números</string>
 
     <!-- TEST -->
+    <string name="title_activity_test">TEST</string>
     <string name="bt_send">Aceptar</string>
+    <string name="toast_fallar">¡¡¡ INCORRECTO !!!</string>
+    <string name="toast_aceptar">¡¡¡ CORRECTO !!!</string>
 
 </resources>

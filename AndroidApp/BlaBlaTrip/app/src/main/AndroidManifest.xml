@@ -12,6 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+
         <activity android:name=".InicioActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,8 +36,11 @@
         <activity
             android:name=".ExpresionesActivity"
             android:label="@string/title_activity_expresiones" />
-        <activity android:name=".TestActivity" >
-        </activity>
+        <!-- TEST -->
+        <activity
+            android:name=".TestActivity"
+            android:label="@string/title_activity_test"/>
+
     </application>
 
 </manifest>

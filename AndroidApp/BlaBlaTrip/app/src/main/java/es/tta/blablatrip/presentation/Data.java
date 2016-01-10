@@ -3,32 +3,32 @@ package es.tta.blablatrip.presentation;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
-
 import es.tta.blablatrip.comms.RestClient;
 import es.tta.blablatrip.model.Test;
 
-/**
- * Created by leire on 9/01/16.
- */
-public class Data {
+public class Data
+{
     RestClient rest = new RestClient();
 
-    public Data (){
-
+    public Data ()
+    {
     }
 
-    public Test getTest (int id) throws IOException, JSONException {
+    public Test getTest (int id) throws IOException, JSONException
+    {
         JSONObject json = rest.getTest();
+
         int length  = Integer.parseInt(json.getString("total"));
+
         JSONArray jsonArray = json.getJSONArray("test");
         JSONObject jsonChoice = jsonArray.getJSONObject(id);
         String pregunta = jsonChoice.getString("question");
         JSONArray respuesta = jsonChoice.getJSONArray("resp");
         int correcto  = Integer.parseInt(json.getString("correct"));
 
-        Test test = new Test(pregunta,respuesta,correcto);
+        Test test = new Test(pregunta,respuesta,correcto, length);
+
         return test;
 
        /* String test_wording = json.getString("wording");

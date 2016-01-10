@@ -2,30 +2,38 @@ package es.tta.blablatrip.model;
 
 import org.json.JSONArray;
 
-/**
- * Created by leire on 9/01/16.
- */
-public class Test {
-
+public class Test
+{
     private String pregunta;
     private JSONArray opciones;
     private int correcto;
+    private int length;
 
-    public Test (String pregunta, JSONArray opciones, int correcto){
+    public Test (String pregunta, JSONArray opciones, int correcto, int length)
+    {
         this.pregunta=pregunta;
         this.opciones=opciones;
         this.correcto=correcto;
+        this.length=length;
     }
 
-    public String getPregunta (){
+    public String getPregunta ()
+    {
         return pregunta;
     }
 
-    public JSONArray getOpciones (){
+    public JSONArray getOpciones ()
+    {
         return opciones;
     }
 
-    public int getCorrecto (){
+    public int getCorrecto ()
+    {
         return correcto;
+    }
+
+    public int getLength ()
+    {
+        return length;
     }
 }
