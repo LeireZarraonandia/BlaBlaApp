@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
 import es.tta.blablatrip.comms.RestClient;
+import es.tta.blablatrip.model.Expresiones;
 import es.tta.blablatrip.model.Test;
 
 public class Data
@@ -21,13 +22,23 @@ public class Data
         JSONObject jsonChoice = jsonArray.getJSONObject(id);
         String pregunta = jsonChoice.getString("wording");
         JSONArray respuesta = jsonChoice.getJSONArray("answer");
-        int correcto  = Integer.parseInt(jsonChoice.getString("correct"));
-
+        int correcto = Integer.parseInt(jsonChoice.getString("correct"));
 
         Test test = new Test(pregunta,respuesta,correcto);
 
         return test;
+    }
 
+    public Expresiones getExpresiones (int id) throws IOException, JSONException
+    {
+        JSONArray jsonArray = rest.getTest();
+        JSONObject jsonChoice = jsonArray.getJSONObject(id);
+        String espanol = jsonChoice.getString("wording");
+        String idioma = jsonChoice.getString("answer");
+        String audio = jsonChoice.getString("correct");
 
+        Expresiones expresiones = new Expresiones(espanol,idioma,audio);
+
+        return expresiones;
     }
 }

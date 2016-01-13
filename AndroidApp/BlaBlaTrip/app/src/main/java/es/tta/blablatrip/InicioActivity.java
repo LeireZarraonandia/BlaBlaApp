@@ -14,8 +14,8 @@ import android.widget.RelativeLayout;
 
 public class InicioActivity extends AppCompatActivity
 {
-    //public final static String EXTRA_ID_INICIO = "es.tta.blablatrip.id_inicio";//ESTO QUE ES¿¿¿¿
-    public static String pais=null;
+    //public final static String EXTRA_ID_INICIO = "es.tta.blablatrip.id_inicio";
+    public static String pais = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

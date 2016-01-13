@@ -13,7 +13,6 @@ public class Test
         this.pregunta=pregunta;
         this.opciones=opciones;
         this.correcto=correcto;
-
     }
 
     public String getPregunta ()
@@ -30,5 +29,4 @@ public class Test
     {
         return correcto;
     }
-
 }
