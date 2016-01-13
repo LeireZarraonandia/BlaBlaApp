@@ -4,7 +4,6 @@ import android.os.Environment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -69,12 +68,6 @@ public class RestClient {
         //return new JSONObject(getString(path));
         return new JSONArray(getString(path));
     }
-
-  /*  public JSONObject getExpresiones () throws IOException, JSONException
-    {
-        String path="http://51.254.127.111/BlaBlaTrip/expresiones"+InicioActivity.pais+".txt";
-        return new JSONObject(getString(path));
-    }*/
 
     public void descargarTest ()
     {

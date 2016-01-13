@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -20,7 +21,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     private Test test;
     private View.OnClickListener listener;
     private int correcto;
-    private RelativeLayout layout;
+    private LinearLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,10 +32,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         listener = this;
         final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
         final TextView textWording = (TextView) findViewById(R.id.pregunta);
-
-
-
-
 
         new Thread(new Runnable()
         {
@@ -77,7 +74,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             }
         }).start();
 
-        layout = (RelativeLayout) findViewById(R.id.test_layout);
+        layout = (LinearLayout) findViewById(R.id.test_layout);
     }
 
     @Override
@@ -86,12 +83,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_send_test).setVisibility(View.VISIBLE);
     }
 
-    public void enviar (View v)
+    public void comprobar (View v)
     {
-        int correct = 1;
         Color color = new Color();
         Button enviar = (Button)findViewById(R.id.button_send_test);
-
         RadioGroup grupo = (RadioGroup) findViewById(R.id.respuesta);
         int choices=grupo.getChildCount();
 
@@ -104,9 +99,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         grupo.getChildAt(correcto).setBackgroundColor(color.GREEN);
 
         int selected=grupo.getCheckedRadioButtonId();
-        if (selected!=correcto)
+        View radioButton = grupo.findViewById(selected);
+        final int elegido = grupo.indexOfChild(radioButton);
+
+        if (elegido!=correcto)
         {
-            grupo.getChildAt(selected).setBackgroundColor(color.RED);
+            grupo.getChildAt(elegido).setBackgroundColor(color.RED);
             Toast.makeText(this, R.string.toast_fallar, Toast.LENGTH_SHORT).show();
         }
         else
