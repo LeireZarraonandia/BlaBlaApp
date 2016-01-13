@@ -4,6 +4,11 @@ import android.os.Environment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+<<<<<<< HEAD
+=======
+import org.json.JSONObject;
+import java.io.BufferedInputStream;
+>>>>>>> a8ab09f3e2978f6fe796de49c965c31c352b28d7
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -17,10 +22,35 @@ import java.net.URL;
 
 
 import es.tta.blablatrip.InicioActivity;
+import android.util.Base64;
+import android.util.Log;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.zip.InflaterOutputStream;
 
+<<<<<<< HEAD
+public class RestClient
+{
+    public RestClient()
+    {
+=======
 public class RestClient {
 
     public RestClient() {
+>>>>>>> origin/master
     }
 
 
@@ -28,7 +58,11 @@ public class RestClient {
  private HttpURLConnection getConnection ( String path) throws IOException
     {
 
+<<<<<<< HEAD
+        URL url = new URL(String.format("%s", path));
+=======
         URL url = new URL("http://51.254.127.111/BlaBlaTrip/testPortugal.json");
+>>>>>>> origin/master
         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
         conn.setRequestProperty("Connection", "Keep-Alive");
         return conn;
