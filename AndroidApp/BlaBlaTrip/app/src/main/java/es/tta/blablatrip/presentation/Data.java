@@ -17,17 +17,14 @@ public class Data
 
     public Test getTest (int id) throws IOException, JSONException
     {
-        JSONObject json = rest.getTest();
-
-        int length  = Integer.parseInt(json.getString("total"));
-
-        JSONArray jsonArray = json.getJSONArray("test");
+        JSONArray jsonArray = rest.getTest();
         JSONObject jsonChoice = jsonArray.getJSONObject(id);
-        String pregunta = jsonChoice.getString("question");
-        JSONArray respuesta = jsonChoice.getJSONArray("resp");
-        int correcto  = Integer.parseInt(json.getString("correct"));
+        String pregunta = jsonChoice.getString("wording");
+        JSONArray respuesta = jsonChoice.getJSONArray("answer");
+        int correcto  = Integer.parseInt(jsonChoice.getString("correct"));
 
-        Test test = new Test(pregunta,respuesta,correcto, length);
+
+        Test test = new Test(pregunta,respuesta,correcto);
 
         return test;
 
