@@ -4,29 +4,29 @@ import org.json.JSONArray;
 
 public class Expresiones
 {
-    private String espanol;
-    private String idioma;
-    private String audio;
+    private String espano;
+    private String idiom;
+    private String audi;
 
-    public Expresiones (String espanol, String idioma, String audio)
+    public Expresiones (String espano, String idiom, String audi)
     {
-        this.espanol = espanol;
-        this.idioma = idioma;
-        this.audio = audio;
+        this.espano = espano;
+        this.idiom = idiom;
+        this.audi = audi;
     }
 
     public String getEspanol ()
     {
-        return espanol;
+        return espano;
     }
 
     public String getIdioma ()
     {
-        return idioma;
+        return idiom;
     }
 
     public String getAudio ()
     {
-        return audio;
+        return audi;
     }
 }

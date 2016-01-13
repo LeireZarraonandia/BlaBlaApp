@@ -11,14 +11,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import es.tta.blablatrip.model.Expresiones;
 import es.tta.blablatrip.model.Test;
 import es.tta.blablatrip.presentation.Data;
 
 public class TestActivity extends AppCompatActivity implements View.OnClickListener
 {
     private Test test;
-    private Expresiones expresiones;
     private View.OnClickListener listener;
     private int correcto;
     private LinearLayout layout;
@@ -39,9 +37,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             public void run()
             {
                 Data data = new Data();
-                try {
-
-                    // TEST
+                try
+                {
                     test = data.getTest(1);
                     textWording.post(new Runnable()
                     {
@@ -68,19 +65,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                         });
                     }
                     correcto = test.getCorrecto();
-
-                    // EXPRESIONES
-                    expresiones = data.getExpresiones(1);
-                    textWording.post(new Runnable()
-                    {
-                        @Override
-                        public void run()
-                        {
-                            textWording.setText(expresiones.getEspanol());
-                        }
-                    });
-
-
                 }
                 catch(Exception e)
                 {

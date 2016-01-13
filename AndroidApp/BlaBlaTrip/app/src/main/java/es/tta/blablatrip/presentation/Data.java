@@ -33,11 +33,11 @@ public class Data
     {
         JSONArray jsonArray = rest.getExpresiones();
         JSONObject jsonChoice = jsonArray.getJSONObject(id);
-        String espanol = jsonChoice.getString("castellano");
-        String idioma = jsonChoice.getString("idioma");
-        String audio = jsonChoice.getString("audio");
+        String espano = jsonChoice.getString("castellano");
+        String idiom = jsonChoice.getString("idioma");
+        String audi = jsonChoice.getString("audio");
 
-        Expresiones expresiones = new Expresiones(espanol,idioma,audio);
+        Expresiones expresiones = new Expresiones(espano,idiom,audi);
 
         return expresiones;
     }

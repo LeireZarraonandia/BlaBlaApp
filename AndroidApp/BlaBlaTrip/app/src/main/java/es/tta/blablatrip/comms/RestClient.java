@@ -89,7 +89,7 @@ public class RestClient
 
     public JSONArray getExpresiones () throws IOException, JSONException
     {
-        String pathExpresiones = "http://51.254.127.111/BlaBlaTrip/expresiones"+InicioActivity.pais+ ExpresionesActivity.expre+".json";
+        String pathExpresiones = "http://51.254.127.111/BlaBlaTrip/expresiones"+InicioActivity.pais+ExpresionesActivity.expre+".json";
         //return new JSONObject(getString(path));
         return new JSONArray(getString(pathExpresiones));
     }
