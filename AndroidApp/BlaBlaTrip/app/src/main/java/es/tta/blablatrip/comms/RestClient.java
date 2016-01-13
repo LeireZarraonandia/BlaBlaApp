@@ -1,7 +1,8 @@
 package es.tta.blablatrip.comms;
 
 import android.os.Environment;
-import android.util.Base64;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.BufferedReader;
@@ -11,65 +12,69 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
+
+
 import es.tta.blablatrip.InicioActivity;
 
-public class RestClient
-{
-    private final String baseUrl=null;
+public class RestClient {
 
-    public RestClient()
-    {
+    public RestClient() {
     }
 
-    private HttpURLConnection getConnection ( String path) throws IOException
+
+
+ private HttpURLConnection getConnection ( String path) throws IOException
     {
 
-        URL url = new URL(String.format("%s%s", baseUrl, path));
+        URL url = new URL("http://51.254.127.111/BlaBlaTrip/testPortugal.json");
         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
         conn.setRequestProperty("Connection", "Keep-Alive");
         return conn;
     }
 
-    public String getString (String path) throws IOException
-    {
-        HttpURLConnection conn = null;
-        try
-        {
-            conn = getConnection(path);
-            try
-            {
-                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                return br.readLine();
-            }
-            catch (IOException e)
-            {
-                return null;
-            }
+
+
+
+ public String getString (String path) throws IOException{
+    HttpURLConnection conn = null;
+    String contents = new String();
+
+    try {
+        conn = getConnection(path);
+        conn.setRequestMethod("GET");
+        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+        contents += br.readLine();
+
+    } catch (IOException i) {
+        i.printStackTrace();
+    } finally {
+        if (conn != null) {
+
+            conn.disconnect();
+
         }
-        finally
-        {
-            if (conn != null)
-            {
-                conn.disconnect();
-            }
-        }
+        return contents;
     }
 
-    public JSONObject getTest () throws IOException, JSONException
+
+    }
+
+    public JSONArray getTest () throws IOException, JSONException
     {
         String path="http://51.254.127.111/BlaBlaTrip/test"+ InicioActivity.pais+".txt";
-        return new JSONObject(getString(path));
+        //return new JSONObject(getString(path));
+        return new JSONArray(getString(path));
     }
 
-    public JSONObject getExpresiones () throws IOException, JSONException
+  /*  public JSONObject getExpresiones () throws IOException, JSONException
     {
         String path="http://51.254.127.111/BlaBlaTrip/expresiones"+InicioActivity.pais+".txt";
         return new JSONObject(getString(path));
-    }
+    }*/
 
     public void descargarTest ()
     {

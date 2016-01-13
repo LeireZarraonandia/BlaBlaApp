@@ -1,8 +1,9 @@
 package es.tta.blablatrip;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         listener = this;
         final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
         final TextView textWording = (TextView) findViewById(R.id.pregunta);
+
+
+
+
 
         new Thread(new Runnable()
         {
@@ -61,8 +66,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                                 group.addView(radio);
                             }
                         });
-                    correcto = test.getCorrecto();
                     }
+                    correcto = test.getCorrecto();
+
                 }
                 catch(Exception e)
                 {
@@ -109,3 +115,5 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
+
+
