@@ -1,7 +1,6 @@
 package es.tta.blablatrip;
 
 import android.graphics.Color;
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,15 +9,16 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import es.tta.blablatrip.model.Expresiones;
 import es.tta.blablatrip.model.Test;
 import es.tta.blablatrip.presentation.Data;
 
 public class TestActivity extends AppCompatActivity implements View.OnClickListener
 {
     private Test test;
+    private Expresiones expresiones;
     private View.OnClickListener listener;
     private int correcto;
     private LinearLayout layout;
@@ -40,16 +40,19 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             {
                 Data data = new Data();
                 try {
+
+                    // TEST
                     test = data.getTest(1);
                     textWording.post(new Runnable()
                     {
                         @Override
-                        public void run() {
+                        public void run()
+                        {
                             textWording.setText(test.getPregunta());
                         }
                     });
 
-                    for (int i=0;i<test.getOpciones().length();i++)
+                    for (int i=0; i<test.getOpciones().length(); i++)
                     {
                         final RadioButton radio = new RadioButton(getApplicationContext());
                         radio.setText(test.getOpciones().getString(i));
@@ -65,6 +68,18 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                         });
                     }
                     correcto = test.getCorrecto();
+
+                    // EXPRESIONES
+                    expresiones = data.getExpresiones(1);
+                    textWording.post(new Runnable()
+                    {
+                        @Override
+                        public void run()
+                        {
+                            textWording.setText(expresiones.getEspanol());
+                        }
+                    });
+
 
                 }
                 catch(Exception e)

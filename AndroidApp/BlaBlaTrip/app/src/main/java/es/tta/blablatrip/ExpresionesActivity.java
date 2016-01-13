@@ -1,5 +1,6 @@
 package es.tta.blablatrip;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,8 +47,10 @@ public class ExpresionesActivity extends AppCompatActivity
 
     public void comer (View view)
     {
-        Toast toast = Toast.makeText(getApplicationContext(), "tabla comer", Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(), "tabla comer", Toast.LENGTH_SHORT);
+        //toast.show();
+        Intent intent = new Intent(this, TablaActivity.class);
+        startActivity(intent);
         expre = "Comer";
     }
 

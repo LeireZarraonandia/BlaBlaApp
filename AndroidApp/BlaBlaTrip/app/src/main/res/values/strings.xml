@@ -37,6 +37,10 @@
     <string name="bt_quejas">Quejas</string>
     <string name="bt_coqueteo">Coqueteo</string>
     <string name="bt_numeros">Números</string>
+    <!-- TABLA -->
+    <string name="table">TABLA EXPRESIONES</string>
+    <string name="spanish">Castellano</string>
+    <string name="pais_italia">Italia</string>
 
     <!-- TEST -->
     <string name="title_activity_test">TEST</string>

@@ -44,9 +44,9 @@ public class RestClient
     {
     }
 
-    private HttpURLConnection getConnection (String pathTest) throws IOException
+    private HttpURLConnection getConnection (String path) throws IOException
     {
-        URL url = new URL(String.format("%s", pathTest));
+        URL url = new URL(String.format("%s", path));
         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
         conn.setRequestProperty("Connection", "Keep-Alive");
         return conn;

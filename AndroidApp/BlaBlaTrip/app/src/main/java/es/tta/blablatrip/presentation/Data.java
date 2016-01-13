@@ -31,11 +31,11 @@ public class Data
 
     public Expresiones getExpresiones (int id) throws IOException, JSONException
     {
-        JSONArray jsonArray = rest.getTest();
+        JSONArray jsonArray = rest.getExpresiones();
         JSONObject jsonChoice = jsonArray.getJSONObject(id);
-        String espanol = jsonChoice.getString("wording");
-        String idioma = jsonChoice.getString("answer");
-        String audio = jsonChoice.getString("correct");
+        String espanol = jsonChoice.getString("castellano");
+        String idioma = jsonChoice.getString("idioma");
+        String audio = jsonChoice.getString("audio");
 
         Expresiones expresiones = new Expresiones(espanol,idioma,audio);
 
