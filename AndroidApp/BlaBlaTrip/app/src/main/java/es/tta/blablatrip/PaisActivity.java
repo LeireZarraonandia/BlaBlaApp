@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PaisActivity extends AppCompatActivity
 {
-    String nombre_pais = InicioActivity.EXTRA_ID_INICIO;
+    String pais = InicioActivity.pais;
+    String nombre = pais.toLowerCase();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,45 +26,43 @@ public class PaisActivity extends AppCompatActivity
 
         // recoger nombre país de InicioActivity y ponerlo de título en PaisActivity
         TextView titulo = (TextView) findViewById(R.id.titulo_pais);
-        titulo.setText(intent.getStringExtra(nombre_pais));
-
-        // recoger nombre país
-        String nombre = intent.getStringExtra(nombre_pais);
+        titulo.setText(intent.getStringExtra(InicioActivity.pais));
 
         RelativeLayout rLayout = (RelativeLayout) findViewById(R.id.relativeLayout_pais);
         Resources res = getResources();
 
+
         switch (nombre)
         {
-            case "Alemania":
+            case "alemania":
             {
                 // está deprecado. Necesitaría API level 21 (Android 5.0). Nuestros móviles Android 4.x
                 Drawable drawable = res.getDrawable(R.drawable.alemania);
                 rLayout.setBackground(drawable);
                 break;
             }
-            case "Francia":
+            case "francia":
             {
                 // está deprecado. Necesitaría API level 21 (Android 5.0). Nuestros móviles Android 4.x
                 Drawable drawable = res.getDrawable(R.drawable.francia);
                 rLayout.setBackground(drawable);
                 break;
             }
-            case "Inglaterra":
+            case "inglaterra":
             {
                 // está deprecado. Necesitaría API level 21 (Android 5.0). Nuestros móviles Android 4.x
                 Drawable drawable = res.getDrawable(R.drawable.inglaterra);
                 rLayout.setBackground(drawable);
                 break;
             }
-            case "Italia":
+            case "italia":
             {
                 // está deprecado. Necesitaría API level 21 (Android 5.0). Nuestros móviles Android 4.x
                 Drawable drawable = res.getDrawable(R.drawable.italia);
                 rLayout.setBackground(drawable);
                 break;
             }
-            case "Portugal":
+            case "portugal":
             {
                 // está deprecado. Necesitaría API level 21 (Android 5.0). Nuestros móviles Android 4.x
                 Drawable drawable = res.getDrawable(R.drawable.portugal);
@@ -83,7 +84,9 @@ public class PaisActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void descarga (View view)
+    public void descargar (View view)
     {
+        Toast toast = Toast.makeText(getApplicationContext(), nombre, Toast.LENGTH_SHORT);
+        toast.show();
     }
 }

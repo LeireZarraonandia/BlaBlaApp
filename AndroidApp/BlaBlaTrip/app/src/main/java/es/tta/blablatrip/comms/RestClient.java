@@ -4,6 +4,7 @@ import android.os.Environment;
 import android.util.Base64;
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -16,11 +17,27 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import es.tta.blablatrip.InicioActivity;
+import android.util.Base64;
+import android.util.Log;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.zip.InflaterOutputStream;
 
 public class RestClient
 {
-    private final String baseUrl=null;
-
     public RestClient()
     {
     }
@@ -28,7 +45,7 @@ public class RestClient
     private HttpURLConnection getConnection ( String path) throws IOException
     {
 
-        URL url = new URL(String.format("%s%s", baseUrl, path));
+        URL url = new URL(String.format("%s", path));
         HttpURLConnection conn = (HttpURLConnection)url.openConnection();
         conn.setRequestProperty("Connection", "Keep-Alive");
         return conn;
