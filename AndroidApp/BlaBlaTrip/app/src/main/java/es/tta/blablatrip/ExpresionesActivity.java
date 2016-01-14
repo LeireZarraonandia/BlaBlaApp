@@ -49,9 +49,9 @@ public class ExpresionesActivity extends AppCompatActivity
     {
         //Toast toast = Toast.makeText(getApplicationContext(), "tabla comer", Toast.LENGTH_SHORT);
         //toast.show();
+        expre = "Comer";
         Intent intent = new Intent(this, TablaActivity.class);
         startActivity(intent);
-        expre = "Comer";
     }
 
     public void compra (View view)
