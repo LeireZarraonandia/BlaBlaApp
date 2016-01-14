@@ -13,6 +13,10 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import es.tta.blablatrip.model.Test;
 import es.tta.blablatrip.presentation.Data;
 
@@ -28,6 +32,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_test);
+        int numtest=0;//o 1???
 
         listener = this;
         final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
@@ -39,38 +44,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             public void run()
             {
                 Data data = new Data();
-                try {
-                    test = data.getTest(1);
-                    textWording.post(new Runnable()
-                    {
-                        @Override
-                        public void run() {
-                            textWording.setText(test.getPregunta());
-                        }
-                    });
 
-                    for (int i=0;i<test.getOpciones().length();i++)
-                    {
-                        final RadioButton radio = new RadioButton(getApplicationContext());
-                        radio.setText(test.getOpciones().getString(i));
-                        radio.setOnClickListener(listener);
-                        radio.setTextColor(Color.BLACK);
-                        group.post(new Runnable()
-                        {
-                            @Override
-                            public void run()
-                            {
-                                group.addView(radio);
-                            }
-                        });
-                    }
-                    correcto = test.getCorrecto();
-
-                }
-                catch(Exception e)
-                {
-                    Log.e("BlaBlaTrip", e.getMessage(), e);
-                }
             }
         }).start();
 
@@ -81,12 +55,14 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View u)
     {
         findViewById(R.id.button_send_test).setVisibility(View.VISIBLE);
+
     }
 
     public void comprobar (View v)
     {
         Color color = new Color();
         Button enviar = (Button)findViewById(R.id.button_send_test);
+        Button siguiente = (Button)findViewById(R.id.button_next_test);
         RadioGroup grupo = (RadioGroup) findViewById(R.id.respuesta);
         int choices=grupo.getChildCount();
 
@@ -106,11 +82,18 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         {
             grupo.getChildAt(elegido).setBackgroundColor(color.RED);
             Toast.makeText(this, R.string.toast_fallar, Toast.LENGTH_SHORT).show();
+            findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
         }
         else
         {
             Toast.makeText(this, R.string.toast_aceptar, Toast.LENGTH_SHORT).show();
+            findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
         }
+    }
+
+    public void siguiente ()
+    {
+
     }
 }
 

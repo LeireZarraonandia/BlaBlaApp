@@ -15,7 +15,15 @@ public class Data
     {
     }
 
-    public Test getTest (int id) throws IOException, JSONException
+    public JSONArray getTest () throws IOException, JSONException
+    {
+        JSONArray jsonArray = rest.getTest();
+
+
+        return jsonArray;
+    }
+
+    /*public Test getExpresiones (int id) throws IOException, JSONException
     {
         JSONArray jsonArray = rest.getTest();
         JSONObject jsonChoice = jsonArray.getJSONObject(id);
@@ -23,11 +31,8 @@ public class Data
         JSONArray respuesta = jsonChoice.getJSONArray("answer");
         int correcto  = Integer.parseInt(jsonChoice.getString("correct"));
 
-
         Test test = new Test(pregunta,respuesta,correcto);
 
         return test;
-
-
-    }
+    }*/
 }
