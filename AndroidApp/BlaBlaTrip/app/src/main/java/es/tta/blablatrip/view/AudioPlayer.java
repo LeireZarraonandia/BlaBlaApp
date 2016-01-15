@@ -1,4 +1,4 @@
-package es.tta.blablatrip;
+package es.tta.blablatrip.view;
 
 import android.media.AudioManager;
 import android.media.MediaPlayer;

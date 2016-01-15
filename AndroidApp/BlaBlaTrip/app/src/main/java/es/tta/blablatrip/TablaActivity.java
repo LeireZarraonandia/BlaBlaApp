@@ -6,54 +6,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import java.util.ArrayList;
 import es.tta.blablatrip.model.Expresiones;
 import es.tta.blablatrip.presentation.Data;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
-import es.tta.blablatrip.model.Test;
-import es.tta.blablatrip.presentation.Data;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.graphics.Color;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.VideoView;
-//import android.media.session.MediaController;
-import android.widget.MediaController;
-import java.io.IOException;
 
 public class TablaActivity extends AppCompatActivity
 {
 
     private Expresiones expresiones;
-    private LinearLayout layout;
+    private RelativeLayout layout;
     private LinearLayout layoutRepro;
-    String spain;
-    String ital;
-    String sonido;
+
+    private TableLayout tabla;
+    private int id_fila, num_celda=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -61,10 +30,19 @@ public class TablaActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_tabla);
 
+        tabla = (TableLayout) findViewById(R.id.tabla);
 
-        final TextView it = (TextView) findViewById(R.id.textIt);
-        final TextView idim = (TextView) findViewById(R.id.textIdiom);
-        final Button audi = (Button) findViewById(R.id.bt_audio);
+
+        final TextView it = (TextView) findViewById(R.id.text1);
+        final TextView idim = (TextView) findViewById(R.id.text2);
+        final TextView audi = (TextView) findViewById(R.id.text3);
+
+
+        String [] espanol = new String[7];
+        String [] idiom = new String[7];
+        String [] audio = new String[7];
+
+        Data data = new Data();
 
         new Thread(new Runnable()
         {
@@ -75,29 +53,142 @@ public class TablaActivity extends AppCompatActivity
 
                 try
                 {
+
                     expresiones = data.getExpresiones(0);
-                    spain = expresiones.getEspanol();
-                    ital = expresiones.getIdioma();
-                    sonido = expresiones.getAudio();
 
                     it.post(new Runnable() {
                         @Override
                         public void run() {
-                            it.setText(spain);
+                            it.setText(expresiones.getEspanol());
                         }
                     });
 
                     idim.post(new Runnable() {
                         @Override
                         public void run() {
-                            idim.setText(ital);
+                            idim.setText(expresiones.getIdioma());
                         }
                     });
 
                     audi.post(new Runnable() {
                         @Override
                         public void run() {
-                            audi.setText(sonido);
+                            audi.setText(expresiones.getAudio());
+                        }
+                    });
+                }
+                catch (Exception e)
+                {
+                    Log.e("BlaBlaTrip", e.getMessage(), e);
+                }
+            }
+        }).start();
+
+        layout = (RelativeLayout) findViewById(R.id.tabla_layout);
+
+        /*for (int i=0; i<8; i++)
+        {
+            TableRow fila = new TableRow(this);
+            fila.setId(100 + i);
+            TextView col1 = new TextView(this);
+            col1.setId(200 + i);
+            TextView col2 = new TextView(this);
+            col2.setId(300 + i);
+            TextView col3 = new TextView(this);
+            col3.setId(400 + i);
+
+            try
+            {
+                expresiones = data.getExpresiones(i);
+
+                espanol[i] =  expresiones.getEspanol();
+                idiom [i] =  expresiones.getIdioma();
+                audio [i] =  expresiones.getAudio();
+
+                col1.setText(espanol[i]);
+                col2.setText(idiom[i]);
+                col3.setText(audio[i]);
+            }
+            catch (Exception e)
+            {
+                Log.e("MAAAAAAL", e.getMessage(), e);
+            }
+
+            fila.addView(col1);
+            fila.addView(col2);
+            fila.addView(col3);
+
+            tabla.addView(fila);
+        }*/
+
+
+        //EJEMPLO
+        /*for (int i=0; i<8; i++)
+        {
+            TableRow fila = new TableRow(this);
+            fila.setId(100 + i);
+            TextView col1 = new TextView(this);
+            col1.setId(200 + i);
+            col1.setText("Celda nº " + num_celda);
+
+            TextView col2 = new TextView(this);
+            col2.setId(300 + i);
+            col2.setText("Celda nº " + (num_celda + 1));
+
+            TextView col3 = new TextView(this);
+            col3.setId(400 + i);
+            col3.setText("Celda nº " + (num_celda + 2));
+
+            fila.addView(col1);
+            fila.addView(col2);
+            fila.addView(col3);
+
+            tabla.addView(fila);
+
+            num_celda=num_celda+3;
+        }*/
+
+
+
+
+
+    }
+
+
+        /*final TextView it = (TextView) findViewById(R.id.textIt1);
+        final TextView idim = (TextView) findViewById(R.id.textIdiom1);
+        final Button audi = (Button) findViewById(R.id.bt_audio1);
+
+        new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Data data = new Data();
+
+                try
+                {
+
+                    expresiones = data.getExpresiones(0);
+
+                    it.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            it.setText(expresiones.getEspanol());
+                        }
+                    });
+
+                    idim.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            idim.setText(expresiones.getIdioma());
+                        }
+                    });
+
+                    audi.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            audi.setText(expresiones.getAudio());
                         }
                     });
                 }
@@ -126,5 +217,6 @@ public class TablaActivity extends AppCompatActivity
 
         layoutRepro.addView(view);
         audio.start();
-    }
+    }*/
+
 }
