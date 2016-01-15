@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context="es.tta.blablatrip.TablaActivity"
+    tools:context="es.tta.blablatrip.view.TablaActivity"
     android:id="@+id/tabla_layout">
 
         <!--<TextView

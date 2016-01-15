@@ -1,4 +1,4 @@
-package es.tta.blablatrip;
+package es.tta.blablatrip.view;
 
 import android.content.Intent;
 import android.net.Uri;

@@ -1,27 +1,22 @@
-package es.tta.blablatrip;
+package es.tta.blablatrip.view;
 
-import android.app.ActionBar;
-import android.graphics.Color;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
+<<<<<<< HEAD:AndroidApp/BlaBlaTrip/app/src/main/java/es/tta/blablatrip/TablaActivity.java
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+=======
+>>>>>>> origin/master:AndroidApp/BlaBlaTrip/app/src/main/java/es/tta/blablatrip/view/TablaActivity.java
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
-import android.view.ViewGroup.LayoutParams;
-import java.io.IOException;
-import java.util.ArrayList;
+
+import es.tta.blablatrip.R;
 import es.tta.blablatrip.model.Expresiones;
 import es.tta.blablatrip.model.Test;
 import es.tta.blablatrip.presentation.Data;
-import es.tta.blablatrip.view.AudioPlayer;
-import android.view.View;
+
 import android.widget.TableRow;
 import android.widget.TextView;
 

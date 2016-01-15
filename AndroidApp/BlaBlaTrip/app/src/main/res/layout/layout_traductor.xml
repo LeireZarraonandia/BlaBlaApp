@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="es.tta.blablatrip.TraductorActivity">
+    tools:context="es.tta.blablatrip.view.TraductorActivity">
 
     <WebView
         android:id="@+id/traductor_webview"

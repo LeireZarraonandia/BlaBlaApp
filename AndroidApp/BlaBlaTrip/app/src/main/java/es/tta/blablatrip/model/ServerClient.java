@@ -1,4 +1,4 @@
-package es.tta.blablatrip.comms;
+package es.tta.blablatrip.model;
 
 
 import org.json.JSONArray;
@@ -9,8 +9,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import es.tta.blablatrip.ExpresionesActivity;
-import es.tta.blablatrip.InicioActivity;
+import es.tta.blablatrip.view.ExpresionesActivity;
+import es.tta.blablatrip.view.InicioActivity;
 
 public class ServerClient
 {

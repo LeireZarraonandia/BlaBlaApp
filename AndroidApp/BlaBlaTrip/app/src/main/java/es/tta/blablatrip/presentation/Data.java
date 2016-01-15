@@ -4,7 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
-import es.tta.blablatrip.comms.ServerClient;
+import es.tta.blablatrip.model.ServerClient;
 import es.tta.blablatrip.model.Expresiones;
 
 public class Data

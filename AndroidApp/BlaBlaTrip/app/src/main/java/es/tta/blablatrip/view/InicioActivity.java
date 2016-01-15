@@ -1,4 +1,4 @@
-package es.tta.blablatrip;
+package es.tta.blablatrip.view;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,8 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import es.tta.blablatrip.R;
 
 
 public class InicioActivity extends AppCompatActivity
