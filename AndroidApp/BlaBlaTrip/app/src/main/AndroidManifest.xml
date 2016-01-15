@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InicioActivity">
+        <activity android:name=".view.InicioActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,27 +22,27 @@
         </activity>
         <!-- TRADUCTOR -->
         <activity
-            android:name=".TraductorActivity"
+            android:name=".view.TraductorActivity"
             android:label="@string/title_activity_traductor" />
         <!-- VALORAION -->
         <activity
-            android:name=".ValoracionActivity"
+            android:name=".view.ValoracionActivity"
             android:label="@string/title_activity_valoracion" />
         <!-- PAIS -->
         <activity
-            android:name=".PaisActivity"
+            android:name=".view.PaisActivity"
             android:label="@string/title_activity_pais" />
         <!-- EXPRESIONES -->
         <activity
-            android:name=".ExpresionesActivity"
+            android:name=".view.ExpresionesActivity"
             android:label="@string/title_activity_expresiones" />
         <!-- TEST -->
         <activity
-            android:name=".TestActivity"
+            android:name=".view.TestActivity"
             android:label="@string/title_activity_test" />
 
         <activity
-            android:name=".TablaActivity"
+            android:name=".view.TablaActivity"
             android:label="@string/table"/>
     </application>
 
