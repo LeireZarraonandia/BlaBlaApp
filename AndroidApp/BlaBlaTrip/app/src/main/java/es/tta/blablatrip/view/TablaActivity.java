@@ -8,18 +8,14 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import es.tta.blablatrip.R;
-
 import es.tta.blablatrip.presentation.Data;
-
 import android.widget.TableRow;
 import android.widget.TextView;
-
 import org.json.JSONArray;
-
+import org.json.JSONException;
 
 public class TablaActivity extends AppCompatActivity
 {
-
     private RelativeLayout layout;
     private View.OnClickListener listener;
     private JSONArray expresiones;
@@ -29,7 +25,11 @@ public class TablaActivity extends AppCompatActivity
     //private JSONObject json;
     private TableLayout tabla;
     public int longitud;
-    private String castellano;
+    //private String [] castellano = null;
+    //private String [] idioma = null;
+    //private String [] audio = null;
+    String spain;
+    String idio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,7 +46,7 @@ public class TablaActivity extends AppCompatActivity
         new Thread(new Runnable()
         {
             Data data = new Data();
-            final TableRow fila = (TableRow) findViewById(R.id.tableFila);
+            //final TableRow fila = (TableRow) findViewById(R.id.tableFila);
 
             @Override
             public void run()
@@ -55,33 +55,8 @@ public class TablaActivity extends AppCompatActivity
                 {
                     expresiones = data.getExpresiones();
 
-                    //tengo lo de numeros
-                    //json = expresiones.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre);
-
                     longitud = expresiones.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).length();
 
-                    for (int i = 0; i < longitud; i++)
-                    {
-                        //final TableRow fila = new TableRow(getApplicationContext());
-                        final TextView col1 = new TextView(getApplicationContext());
-                        final TextView col2 = new TextView(getApplicationContext());
-                        final Button col3 = new Button(getApplicationContext());
-
-                        col1.setText(expresiones.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("castellano"));
-                        col2.setText(expresiones.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("idioma"));
-                        col3.setText(R.string.cabeceraAudio);
-
-                        /*fila.post(new Runnable() {
-                            @Override
-                            public void run() {*/
-                                fila.addView(col1);
-                                fila.addView(col2);
-                                fila.addView(col3);
-
-                                tabla.addView(fila);
-                        //}
-                        //});
-                    }
                 }
                 catch (Exception e)
                 {
@@ -90,8 +65,42 @@ public class TablaActivity extends AppCompatActivity
             }
         }).start();
 
-        layout = (RelativeLayout) findViewById(R.id.tabla_layout);
+        for (int i=0; i<longitud; i++)
+        {
+            TableRow fila = new TableRow(this);
+            fila.setId(100 + i);
+            TextView col1 = new TextView(this);
+            col1.setId(200 + i);
+            try
+            {
+                col1.setText(expresiones.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("castellano"));
+            }
+            catch (JSONException e)
+            {
+                e.printStackTrace();
+            }
+            TextView col2 = new TextView(this);
+            col2.setId(300 + i);
+            try
+            {
+                col2.setText(expresiones.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("idioma"));
+            }
+            catch (JSONException e)
+            {
+                e.printStackTrace();
+            }
+            Button col3 = new Button(this);
+            col3.setId(400 + i);
+            col3.setText(R.string.cabeceraAudio);
 
+            fila.addView(col1);
+            fila.addView(col2);
+            fila.addView(col3);
+
+            tabla.addView(fila);
+        }
+
+        //layout = (RelativeLayout) findViewById(R.id.tabla_layout);
 
 
         //EJEMPLO FUNCIONA
@@ -101,23 +110,21 @@ public class TablaActivity extends AppCompatActivity
             fila.setId(100 + i);
             TextView col1 = new TextView(this);
             col1.setId(200 + i);
-            col1.setText("Celda nº " + num_celda);
+            col1.setText("Celda nº ");
 
             TextView col2 = new TextView(this);
             col2.setId(300 + i);
-            col2.setText("Celda nº " + (num_celda + 1));
+            col2.setText("Celda nº ");
 
-            TextView col3 = new TextView(this);
+            Button col3 = new Button(this);
             col3.setId(400 + i);
-            col3.setText("Celda nº " + (num_celda + 2));
+            col3.setText("Celda nº ");
 
             fila.addView(col1);
             fila.addView(col2);
             fila.addView(col3);
 
             tabla.addView(fila);
-
-            num_celda=num_celda+3;
         }*/
 
     }
@@ -139,4 +146,5 @@ public class TablaActivity extends AppCompatActivity
         layoutRepro.addView(view);
         audio.start();
     }*/
+
 }
