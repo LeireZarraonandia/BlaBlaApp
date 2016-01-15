@@ -52,29 +52,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     teses = data.getTest();
 
-                 //   do {
-                     /*   final Test test = new Test(teses.getJSONObject(nPregunta).getString("wording"), teses.getJSONObject(nPregunta).getJSONArray("answer"), teses.getJSONObject(nPregunta).getInt("correct"));
-                        textWording.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                textWording.setText(test.getPregunta());
-                            }
-                        });
-                        for (int i = 0; i < test.getOpciones().length(); i++) {
-                            final RadioButton radio = new RadioButton(getApplicationContext());
-                            radio.setText(test.getOpciones().getString(i));
-                            radio.setOnClickListener(listener);
-                            radio.setTextColor(Color.BLACK);
-                            group.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    group.addView(radio);
-                                }
-                            });
-                        }
-                        correcto = test.getCorrecto();*/
-                   // }while (nPregunta<teses.length());
-
                 }
                 catch(Exception e)
                 {
@@ -84,7 +61,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             }
         }).start();
         findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
-        nPregunta++;
+
         layout = (LinearLayout) findViewById(R.id.test_layout);
 
     }
@@ -98,8 +75,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     public void comprobar (View v)
     {
+        findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
+        findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
         Color color = new Color();
-        Button enviar = (Button)findViewById(R.id.button_send_test);
+
         RadioGroup grupo = (RadioGroup) findViewById(R.id.respuesta);
         int choices=grupo.getChildCount();
 
@@ -108,7 +87,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             grupo.getChildAt(i).setEnabled(false);
         }
 
-        enviar.setVisibility(View.INVISIBLE);
+
         grupo.getChildAt(correcto).setBackgroundColor(color.GREEN);
 
         int selected=grupo.getCheckedRadioButtonId();
@@ -124,20 +103,22 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         {
             Toast.makeText(this, R.string.toast_aceptar, Toast.LENGTH_SHORT).show();
         }
-        findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
+
     }
 
     public void teses (View v) throws JSONException {
 
+        final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
+        int pregutnas = teses.length();
         if(nPregunta<teses.length()) {
-            final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
+            group.removeAllViews();
             TextView textWording = (TextView) findViewById(R.id.pregunta);
 
-            group
-            findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
+
             final Test test = new Test(teses.getJSONObject(nPregunta).getString("wording"), teses.getJSONObject(nPregunta).getJSONArray("answer"), teses.getJSONObject(nPregunta).getInt("correct"));
             textWording.setText(test.getPregunta());
             for (int i = 0; i < test.getOpciones().length(); i++) {
+
                 final RadioButton radio = new RadioButton(getApplicationContext());
                 radio.setText(test.getOpciones().getString(i));
                 radio.setOnClickListener(listener);
@@ -149,9 +130,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 });
             }
+            findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
+            findViewById(R.id.button_send_test).setVisibility(View.VISIBLE);
             correcto = test.getCorrecto();
             nPregunta++;
-            findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
+
+
 
         }
 
