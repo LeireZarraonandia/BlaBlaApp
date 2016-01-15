@@ -71,7 +71,7 @@ public class ServerClient
 
         return new JSONArray(getString(pathTest));*/
 
-        String pathExpresiones = "http://51.254.127.111/BlaBlaTrip/expresiones"+InicioActivity.pais+ExpresionesActivity.expre+".json";
+        String pathExpresiones = "http://51.254.127.111/BlaBlaTrip/expresiones"+InicioActivity.pais+".json";
         return new JSONArray(getString(pathExpresiones));
 
     }

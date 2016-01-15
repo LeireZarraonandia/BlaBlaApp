@@ -51,29 +51,36 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     teses = data.getTest();
 
-                    do {
-                        final Test test = new Test(teses.getJSONObject(nPregunta).getString("wording"), teses.getJSONObject(nPregunta).getJSONArray("answer"), teses.getJSONObject(nPregunta).getInt("correct"));
-                        textWording.post(new Runnable() {
+                    do
+                    {
+                        final Test test = new Test(teses.getJSONObject(nPregunta).getString("wording"),
+                                teses.getJSONObject(nPregunta).getJSONArray("answer"),
+                                teses.getJSONObject(nPregunta).getInt("correct"));
+                        textWording.post(new Runnable()
+                        {
                             @Override
-                            public void run() {
+                            public void run()
+                            {
                                 textWording.setText(test.getPregunta());
                             }
                         });
-                        for (int i = 0; i < test.getOpciones().length(); i++) {
+                        for (int i = 0; i < test.getOpciones().length(); i++)
+                        {
                             final RadioButton radio = new RadioButton(getApplicationContext());
                             radio.setText(test.getOpciones().getString(i));
                             radio.setOnClickListener(listener);
                             radio.setTextColor(Color.BLACK);
-                            group.post(new Runnable() {
+                            group.post(new Runnable()
+                            {
                                 @Override
-                                public void run() {
+                                public void run()
+                                {
                                     group.addView(radio);
                                 }
                             });
                         }
                         correcto = test.getCorrecto();
                     }while (nPregunta<teses.length());
-
                 }
                 catch(Exception e)
                 {
@@ -152,5 +159,3 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
     }
 }
-
-

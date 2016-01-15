@@ -11,25 +11,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.view.ViewGroup.LayoutParams;
 import java.io.IOException;
 import java.util.ArrayList;
 import es.tta.blablatrip.model.Expresiones;
+import es.tta.blablatrip.model.Test;
 import es.tta.blablatrip.presentation.Data;
 import es.tta.blablatrip.view.AudioPlayer;
 import android.view.View;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+
 public class TablaActivity extends AppCompatActivity
 {
 
-    private Expresiones expresiones;
     private RelativeLayout layout;
-
+    private View.OnClickListener listener;
+    private JSONArray expresiones;
     private TableLayout tabla;
+    public int longitud;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,12 +42,13 @@ public class TablaActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_tabla);
 
+
         TextView cabeceraCol2 = (TextView)findViewById(R.id.cabeceraCol2);
         cabeceraCol2.setText(InicioActivity.pais);
 
         tabla = (TableLayout) findViewById(R.id.tabla);
 
-        for (int i=0; i<8; i++)
+        /*for (int i=0; i<8; i++)
         {
             TableRow fila = new TableRow(this);
             fila.setId(100 + i);
@@ -56,24 +62,26 @@ public class TablaActivity extends AppCompatActivity
             col2.setId(300 + i);
             final Button col3 = new Button(this);
             //final ViewGroup.LayoutParams params = col3.getLayoutParams();
+            final ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            col3.setLayoutParams(params);
             //params.width = 100;
             //col3.setLayoutParams(params);
             //col3.setGravity(Gravity.CENTER_HORIZONTAL);
             col3.setId(400 + i);
-            //col3.setOnClickListener(hearAudio());
 
-            final int j=i;
 
             new Thread(new Runnable()
             {
                 Data data = new Data();
+
                 @Override
                 public void run()
                 {
                     try
                     {
-                        expresiones = data.getExpresiones(j);
+                        expresiones = data.getExpresiones(0);
                         //expresiones = data.getExpresiones(0);
+
 
                         col1.post(new Runnable()
                         {
@@ -107,7 +115,9 @@ public class TablaActivity extends AppCompatActivity
                         Log.e("BlaBlaTrip", e.getMessage(), e);
                     }
                 }
+
             }).start();
+
 
             fila.addView(col1);
             fila.addView(col2);
@@ -116,8 +126,62 @@ public class TablaActivity extends AppCompatActivity
             tabla.addView(fila);
         }
 
+        layout = (RelativeLayout) findViewById(R.id.tabla_layout);*/
+
+
+        new Thread(new Runnable()
+        {
+            Data data = new Data();
+
+            @Override
+            public void run()
+            {
+                try
+                {
+                    expresiones = data.getExpresiones();
+                    JSONArray json = expresiones.getJSONArray(ExpresionesActivity.numExpre);
+                    longitud = expresiones.getJSONArray(ExpresionesActivity.numExpre).length();
+
+                    int ihgk= expresiones.getJSONArray(ExpresionesActivity.numExpre).length();
+                    for (int i = 0; i < longitud; i++)
+                    {
+                        final Expresiones expresion = new Expresiones(expresiones.getJSONArray(ExpresionesActivity.numExpre).getJSONObject(i).getString("castellano"),
+                                expresiones.getJSONArray(ExpresionesActivity.numExpre).getJSONObject(i).getString("idioma"),
+                                expresiones.getJSONArray(ExpresionesActivity.numExpre).getJSONObject(i).getString("audio"));
+
+                        final TableRow fila = new TableRow(getApplicationContext());
+                        final TextView col1 = new TextView(getApplication());
+                        final TextView col2 = new TextView(getApplication());
+                        final Button col3 = new Button(getApplication());
+
+                        col1.setText(expresion.getEspanol());
+                        col2.setText(expresion.getIdioma());
+                        col3.setText(R.string.cabeceraAudio);
+
+                        fila.post(new Runnable()
+                        {
+                            @Override
+                            public void run()
+                            {
+                                fila.addView(col1);
+                                fila.addView(col2);
+                                fila.addView(col3);
+                            }
+                        });
+
+                        tabla.addView(fila);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Log.e("BlaBlaTrip", e.getMessage(), e);
+                }
+            }
+        }).start();
 
         layout = (RelativeLayout) findViewById(R.id.tabla_layout);
+
+
 
         //EJEMPLO FUNCIONA
         /*for (int i=0; i<8; i++)
@@ -147,14 +211,15 @@ public class TablaActivity extends AppCompatActivity
 
     }
 
-    /*public void hearAudio(View v) throws IOException
+    /*public void hearAudio(String nada) throws IOException
     {
         View view = new View(this);
 
         AudioPlayer audio = new AudioPlayer(view);
         RelativeLayout layoutRepro = (RelativeLayout)findViewById(R.id.tabla_layout);
 
-        Uri uri = Uri.parse("http://www.noiseaddicts.com/samples_1w72b820/55.mp3");
+        Uri uri = Uri.parse(nada);
+        //Uri uri = Uri.parse("http://www.noiseaddicts.com/samples_1w72b820/55.mp3");
         audio.setAudioUri(uri);
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
