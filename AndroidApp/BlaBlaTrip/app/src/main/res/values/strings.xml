@@ -39,8 +39,9 @@
     <string name="bt_numeros">Números</string>
     <!-- TABLA -->
     <string name="table">TABLA EXPRESIONES</string>
-    <string name="spanish">Castellano</string>
-    <string name="pais_italia">Italia</string>
+    <string name="cabeceraSpanish">Castellano</string>
+    <string name="cabeceraIdioma"></string>
+    <string name="cabeceraAudio">Audio</string>
 
     <!-- TEST -->
     <string name="title_activity_test">TEST</string>
