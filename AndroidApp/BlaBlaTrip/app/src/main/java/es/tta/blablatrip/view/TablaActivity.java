@@ -3,18 +3,13 @@ package es.tta.blablatrip.view;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD:AndroidApp/BlaBlaTrip/app/src/main/java/es/tta/blablatrip/TablaActivity.java
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-=======
->>>>>>> origin/master:AndroidApp/BlaBlaTrip/app/src/main/java/es/tta/blablatrip/view/TablaActivity.java
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 
 import es.tta.blablatrip.R;
 import es.tta.blablatrip.model.Expresiones;
-import es.tta.blablatrip.model.Test;
 import es.tta.blablatrip.presentation.Data;
 
 import android.widget.TableRow;

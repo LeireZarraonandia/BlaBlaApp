@@ -6,16 +6,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 
 import es.tta.blablatrip.R;
+import es.tta.blablatrip.presentation.ResultadoTest;
 import es.tta.blablatrip.model.Test;
 import es.tta.blablatrip.presentation.Data;
 
@@ -24,14 +25,17 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     private JSONArray teses;
     private View.OnClickListener listener;
     private int correcto, nPregunta;
-    private LinearLayout layout;
+    private RelativeLayout layout;
+    private ResultadoTest resultadoTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_test);
+        //findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
 
+        resultadoTest=new ResultadoTest(0);
         final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
         final TextView textWording = (TextView) findViewById(R.id.pregunta);
 
@@ -52,39 +56,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     teses = data.getTest();
 
-<<<<<<< HEAD:AndroidApp/BlaBlaTrip/app/src/main/java/es/tta/blablatrip/TestActivity.java
-                    do
-                    {
-                        final Test test = new Test(teses.getJSONObject(nPregunta).getString("wording"),
-                                teses.getJSONObject(nPregunta).getJSONArray("answer"),
-                                teses.getJSONObject(nPregunta).getInt("correct"));
-                        textWording.post(new Runnable()
-                        {
-                            @Override
-                            public void run()
-                            {
-                                textWording.setText(test.getPregunta());
-                            }
-                        });
-                        for (int i = 0; i < test.getOpciones().length(); i++)
-                        {
-                            final RadioButton radio = new RadioButton(getApplicationContext());
-                            radio.setText(test.getOpciones().getString(i));
-                            radio.setOnClickListener(listener);
-                            radio.setTextColor(Color.BLACK);
-                            group.post(new Runnable()
-                            {
-                                @Override
-                                public void run()
-                                {
-                                    group.addView(radio);
-                                }
-                            });
-                        }
-                        correcto = test.getCorrecto();
-                    }while (nPregunta<teses.length());
-=======
->>>>>>> origin/master:AndroidApp/BlaBlaTrip/app/src/main/java/es/tta/blablatrip/view/TestActivity.java
                 }
                 catch(Exception e)
                 {
@@ -93,9 +64,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         }).start();
-        findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
 
-        layout = (LinearLayout) findViewById(R.id.test_layout);
+
+        layout = (RelativeLayout) findViewById(R.id.test_layout);
 
     }
 
@@ -108,11 +79,14 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     public void comprobar (View v)
     {
+        Data data = new Data();
+
         findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
         findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
         Color color = new Color();
 
         RadioGroup grupo = (RadioGroup) findViewById(R.id.respuesta);
+        TextView resultado = (TextView) findViewById(R.id.resultado);
         int choices=grupo.getChildCount();
 
         for(int i=0; i<choices; i++)
@@ -126,20 +100,28 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         int selected=grupo.getCheckedRadioButtonId();
         View radioButton = grupo.findViewById(selected);
         final int elegido = grupo.indexOfChild(radioButton);
+        String prueba="El resultado es ";
 
         if (elegido!=correcto)
         {
             grupo.getChildAt(elegido).setBackgroundColor(color.RED);
             Toast.makeText(this, R.string.toast_fallar, Toast.LENGTH_SHORT).show();
+            resultado.setText(prueba+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
+
         }
         else
         {
+            resultadoTest.actualizarResultado(true);
             Toast.makeText(this, R.string.toast_aceptar, Toast.LENGTH_SHORT).show();
+            resultado.setText(prueba+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
         }
 
     }
 
     public void teses (View v) throws JSONException {
+
+        findViewById(R.id.button_start_test).setVisibility(View.INVISIBLE);
+        findViewById(R.id.inicio).setVisibility(View.INVISIBLE);
 
         final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
         int pregutnas = teses.length();
@@ -173,10 +155,20 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (nPregunta==teses.length()){
-            Toast.makeText(this, "has acabado", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, PaisActivity.class);
-            startActivity(intent);
+            String frase_final = "Se ha acabado el test. El resultado es: ";
+            findViewById(R.id.pregunta).setVisibility(View.INVISIBLE);
+            findViewById(R.id.respuesta).setVisibility(View.INVISIBLE);
+            findViewById(R.id.resultado).setVisibility(View.INVISIBLE);
+            TextView finalizar = (TextView) findViewById(R.id.finalizar);
+            finalizar.setText(frase_final+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
+            findViewById(R.id.finalizar).setVisibility(View.VISIBLE);
+            findViewById(R.id.button_finish_test).setVisibility(View.VISIBLE);
         }
 
+    }
+
+    public void salir (View v) {
+        Intent intent = new Intent(this, PaisActivity.class);
+        startActivity(intent);
     }
 }
