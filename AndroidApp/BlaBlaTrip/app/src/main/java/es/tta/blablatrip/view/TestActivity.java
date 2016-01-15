@@ -133,6 +133,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
             TextView textWording = (TextView) findViewById(R.id.pregunta);
 
+            group
             findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
             final Test test = new Test(teses.getJSONObject(nPregunta).getString("wording"), teses.getJSONObject(nPregunta).getJSONArray("answer"), teses.getJSONObject(nPregunta).getInt("correct"));
             textWording.setText(test.getPregunta());
@@ -160,39 +161,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
-
-
-
-
-
-
-
-
-
-        /*final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
-        TextView textWording = (TextView) findViewById(R.id.pregunta);
-
-        findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
-        final Test test=new Test(teses.getJSONObject(nPregunta).getString("wording"),teses.getJSONObject(nPregunta).getJSONArray("answer"), teses.getJSONObject(nPregunta).getInt("correct"));
-        textWording.setText(test.getPregunta());
-        for (int i=0; i<test.getOpciones().length(); i++)
-        {
-            final RadioButton radio = new RadioButton(getApplicationContext());
-            radio.setText(test.getOpciones().getString(i));
-            radio.setOnClickListener(listener);
-            radio.setTextColor(Color.BLACK);
-            group.post(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    group.addView(radio);
-                }
-            });
-        }
-        correcto = test.getCorrecto();
-        nPregunta++;
-        findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);*/
     }
 }
 
