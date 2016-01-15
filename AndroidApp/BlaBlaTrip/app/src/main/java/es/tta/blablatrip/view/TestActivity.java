@@ -52,7 +52,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     teses = data.getTest();
 
-<<<<<<< HEAD:AndroidApp/BlaBlaTrip/app/src/main/java/es/tta/blablatrip/TestActivity.java
+
                     do
                     {
                         final Test test = new Test(teses.getJSONObject(nPregunta).getString("wording"),
@@ -83,8 +83,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                         }
                         correcto = test.getCorrecto();
                     }while (nPregunta<teses.length());
-=======
->>>>>>> origin/master:AndroidApp/BlaBlaTrip/app/src/main/java/es/tta/blablatrip/view/TestActivity.java
+
                 }
                 catch(Exception e)
                 {
