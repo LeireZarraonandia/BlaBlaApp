@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
-
 import es.tta.blablatrip.R;
 
 public class ExpresionesActivity extends AppCompatActivity
@@ -22,75 +20,73 @@ public class ExpresionesActivity extends AppCompatActivity
 
     public void basicas (View view)
     {
-        Toast toast = Toast.makeText(getApplicationContext(), "tabla básicas", Toast.LENGTH_SHORT);
-        toast.show();
         expre = "Basicas";
         numExpre = 0;
+        Intent intent = new Intent(this, TablaActivity.class);
+        startActivity(intent);
     }
 
     public void comer (View view)
     {
-        Toast toast = Toast.makeText(getApplicationContext(), "tabla comer", Toast.LENGTH_SHORT);
-        toast.show();
         expre = "Comer";
         numExpre = 1;
+        Intent intent = new Intent(this, TablaActivity.class);
+        startActivity(intent);
     }
 
-    public void comprar (View view)
+    public void compra (View view)
     {
-        Toast toast = Toast.makeText(getApplicationContext(), "tabla comprar", Toast.LENGTH_SHORT);
-        toast.show();
-        expre = "Comprar";
+        expre = "Compras";
         numExpre = 2;
+        Intent intent = new Intent(this, TablaActivity.class);
+        startActivity(intent);
     }
 
     public void coqueteo (View view)
     {
-        Toast toast = Toast.makeText(getApplicationContext(), "tabla coqueteo", Toast.LENGTH_SHORT);
-        toast.show();
         expre = "Coqueteo";
         numExpre = 3;
+        Intent intent = new Intent(this, TablaActivity.class);
+        startActivity(intent);
     }
 
     public void hospedaje (View view)
     {
-        Toast toast = Toast.makeText(getApplicationContext(), "tabla hospedaje", Toast.LENGTH_SHORT);
-        toast.show();
         expre = "Hospedaje";
         numExpre = 4;
+        Intent intent = new Intent(this, TablaActivity.class);
+        startActivity(intent);
     }
 
     public void numeros (View view)
     {
-        //Toast toast = Toast.makeText(getApplicationContext(), "tabla numeros", Toast.LENGTH_SHORT);
-        //toast.show();
         expre = "Numeros";
+        numExpre = 5;
         Intent intent = new Intent(this, TablaActivity.class);
         startActivity(intent);
-        numExpre = 5;
     }
 
     public void quejas (View view)
     {
-        Toast toast = Toast.makeText(getApplicationContext(), "tabla quejas", Toast.LENGTH_SHORT);
-        toast.show();
         expre = "Quejas";
         numExpre = 6;
+        Intent intent = new Intent(this, TablaActivity.class);
+        startActivity(intent);
     }
 
     public void salud (View view)
     {
-        Toast toast = Toast.makeText(getApplicationContext(), "tabla salud", Toast.LENGTH_SHORT);
-        toast.show();
         expre = "Salud";
         numExpre = 7;
+        Intent intent = new Intent(this, TablaActivity.class);
+        startActivity(intent);
     }
 
     public void viajar (View view)
     {
-        Toast toast = Toast.makeText(getApplicationContext(), "tabla viajar", Toast.LENGTH_SHORT);
-        toast.show();
         expre = "Viajar";
         numExpre = 8;
+        Intent intent = new Intent(this, TablaActivity.class);
+        startActivity(intent);
     }
 }

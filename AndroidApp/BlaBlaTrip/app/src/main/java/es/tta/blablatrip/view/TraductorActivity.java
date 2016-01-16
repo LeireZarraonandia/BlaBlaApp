@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
 import es.tta.blablatrip.R;
 
 public class TraductorActivity extends AppCompatActivity

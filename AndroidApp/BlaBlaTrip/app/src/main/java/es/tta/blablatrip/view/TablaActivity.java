@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import es.tta.blablatrip.R;
+import es.tta.blablatrip.model.Expresiones;
 import es.tta.blablatrip.presentation.Data;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -18,18 +19,13 @@ public class TablaActivity extends AppCompatActivity
 {
     private RelativeLayout layout;
     private View.OnClickListener listener;
-    private JSONArray expresiones;
+    private JSONArray expresion;
     private JSONArray numeros;
-    private String json;
-    //private JSONArray json;
+    //private String json;
+    private JSONArray json;
     //private JSONObject json;
     private TableLayout tabla;
     public int longitud;
-    //private String [] castellano = null;
-    //private String [] idioma = null;
-    //private String [] audio = null;
-    String spain;
-    String idio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -53,9 +49,11 @@ public class TablaActivity extends AppCompatActivity
             {
                 try
                 {
-                    expresiones = data.getExpresiones();
+                    expresion = data.getExpresiones();
 
-                    longitud = expresiones.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).length();
+                    longitud = expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).length();
+
+
 
                 }
                 catch (Exception e)
@@ -65,39 +63,44 @@ public class TablaActivity extends AppCompatActivity
             }
         }).start();
 
+
         for (int i=0; i<longitud; i++)
         {
-            TableRow fila = new TableRow(this);
-            fila.setId(100 + i);
-            TextView col1 = new TextView(this);
-            col1.setId(200 + i);
             try
             {
-                col1.setText(expresiones.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("castellano"));
+                //json = expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre);
+
+                final Expresiones expresiones = new Expresiones (
+                        expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("castellano"),
+                        expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("idioma"),
+                        expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("audio"));
+
+                final TableRow fila = new TableRow(getApplicationContext());
+
+                final TextView col1 = new TextView(getApplicationContext());
+                col1.setText(expresiones.getEspanol());
+
+                final TextView col2 = new TextView(getApplicationContext());
+                col2.setText(expresiones.getIdioma());
+
+                final Button col3 = new Button(getApplicationContext());
+                col3.setText(R.string.cabeceraAudio);
+
+                fila.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        fila.addView(col1);
+                        fila.addView(col2);
+                        fila.addView(col3);
+                        tabla.addView(fila);
+                    }
+                });
+
             }
             catch (JSONException e)
             {
                 e.printStackTrace();
             }
-            TextView col2 = new TextView(this);
-            col2.setId(300 + i);
-            try
-            {
-                col2.setText(expresiones.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("idioma"));
-            }
-            catch (JSONException e)
-            {
-                e.printStackTrace();
-            }
-            Button col3 = new Button(this);
-            col3.setId(400 + i);
-            col3.setText(R.string.cabeceraAudio);
-
-            fila.addView(col1);
-            fila.addView(col2);
-            fila.addView(col3);
-
-            tabla.addView(fila);
         }
 
         //layout = (RelativeLayout) findViewById(R.id.tabla_layout);
@@ -111,19 +114,15 @@ public class TablaActivity extends AppCompatActivity
             TextView col1 = new TextView(this);
             col1.setId(200 + i);
             col1.setText("Celda nº ");
-
             TextView col2 = new TextView(this);
             col2.setId(300 + i);
             col2.setText("Celda nº ");
-
             Button col3 = new Button(this);
             col3.setId(400 + i);
             col3.setText("Celda nº ");
-
             fila.addView(col1);
             fila.addView(col2);
             fila.addView(col3);
-
             tabla.addView(fila);
         }*/
 
@@ -132,19 +131,15 @@ public class TablaActivity extends AppCompatActivity
     /*public void hearAudio(String nada) throws IOException
     {
         View view = new View(this);
-
         AudioPlayer audio = new AudioPlayer(view);
         RelativeLayout layoutRepro = (RelativeLayout)findViewById(R.id.tabla_layout);
-
         Uri uri = Uri.parse(nada);
         //Uri uri = Uri.parse("http://www.noiseaddicts.com/samples_1w72b820/55.mp3");
         audio.setAudioUri(uri);
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         view.setLayoutParams(params);
-
         layoutRepro.addView(view);
         audio.start();
     }*/
-
 }

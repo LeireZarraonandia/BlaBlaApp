@@ -40,10 +40,11 @@
         <activity
             android:name=".view.TestActivity"
             android:label="@string/title_activity_test" />
-
+        <!--TABLA EXPRESIONES-->
         <activity
             android:name=".view.TablaActivity"
             android:label="@string/table"/>
+
     </application>
 
 </manifest>

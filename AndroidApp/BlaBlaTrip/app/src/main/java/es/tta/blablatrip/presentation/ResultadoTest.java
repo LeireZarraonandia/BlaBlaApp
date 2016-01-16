@@ -1,13 +1,12 @@
 package es.tta.blablatrip.presentation;
 
-/**
- * Created by leire on 15/01/16.
- */
-public class ResultadoTest {
+public class ResultadoTest
+{
     private int correctos;
 
-    public ResultadoTest (int correctos){
-        this.correctos=correctos;
+    public ResultadoTest (int correctos)
+    {
+        this.correctos = correctos;
     }
 
     public int getCorrectos ()
@@ -17,7 +16,8 @@ public class ResultadoTest {
 
     public void actualizarResultado (boolean valor)
     {
-       if (valor){
+       if (valor)
+       {
            correctos++;
        }
     }
