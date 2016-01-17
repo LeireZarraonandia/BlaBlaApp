@@ -3,14 +3,12 @@ package es.tta.blablatrip.view;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import es.tta.blablatrip.R;
 
 public class PaisActivity extends AppCompatActivity
@@ -89,7 +87,7 @@ public class PaisActivity extends AppCompatActivity
 
     public void descargar (View view)
     {
-        Toast toast = Toast.makeText(getApplicationContext(), nombre, Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getApplicationContext(), "La descarga todavía no está implementada", Toast.LENGTH_SHORT);
         toast.show();
     }
 }
