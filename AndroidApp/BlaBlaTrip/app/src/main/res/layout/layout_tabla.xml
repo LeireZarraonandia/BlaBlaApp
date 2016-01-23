@@ -12,36 +12,6 @@
     tools:context="es.tta.blablatrip.view.TablaActivity"
     android:id="@+id/tabla_layout">
 
-        <!--<TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="#8c000000"
-            android:padding="10dp"
-            android:textColor="#ffe3e3e3"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:id="@+id/textIt1"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="#8c000000"
-            android:padding="10dp"
-            android:textColor="#ffe3e3e3"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:id="@+id/textIdiom1"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="hearAudio"
-            android:id="@+id/bt_audio1"/>-->
-
-
-
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -11,6 +11,7 @@ import es.tta.blablatrip.view.InicioActivity;
 
 public class ServerClient
 {
+    private String urlServer = "http://51.254.127.111/BlaBlaTrip/";
     public ServerClient()
     {
     }
@@ -53,13 +54,13 @@ public class ServerClient
 
     public JSONArray getTest () throws IOException, JSONException
     {
-        String pathTest = "http://51.254.127.111/BlaBlaTrip/test"+InicioActivity.pais+".json";
+        String pathTest = urlServer+"test"+InicioActivity.pais+".json";
         return new JSONArray(getString(pathTest));
     }
 
     public JSONArray getExpresiones () throws IOException, JSONException
     {
-        String pathExpresiones = "http://51.254.127.111/BlaBlaTrip/expresiones"+InicioActivity.pais+".json";
+        String pathExpresiones = urlServer+"expresiones"+InicioActivity.pais+".json";
         return new JSONArray(getString(pathExpresiones));
 
     }
