@@ -5,17 +5,24 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+
+import java.io.IOException;
+
 import es.tta.blablatrip.R;
+import es.tta.blablatrip.model.Test;
+import es.tta.blablatrip.presentation.Data;
 
 public class PaisActivity extends AppCompatActivity
 {
     String pais = InicioActivity.pais;
     String nombre = pais.toLowerCase();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -85,9 +92,26 @@ public class PaisActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void descargar (View view)
-    {
-        Toast toast = Toast.makeText(getApplicationContext(), "La descarga todavía no está implementada", Toast.LENGTH_SHORT);
-        toast.show();
+    public void descargar (View view) throws IOException, JSONException {
+        new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                int nPregunta = 0; ///////////////////////
+                Data data = new Data();
+
+                try
+                {
+                    data.descargar();
+
+                }
+                catch(Exception e)
+                {
+                    Log.e("BlaBlaTrip", e.getMessage(), e);
+                }
+            }
+        }).start();
+
     }
 }

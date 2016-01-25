@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import es.tta.blablatrip.model.Test;
+
 public abstract class ProgressTask<T> extends AsyncTask<Void, Void, T>
 {
     protected final Context context;
@@ -59,4 +61,6 @@ public abstract class ProgressTask<T> extends AsyncTask<Void, Void, T>
 
     protected abstract  T work() throws Exception;
     protected abstract void onFinish(T result);
+
+    protected abstract void onFinish(Test resultado);
 }

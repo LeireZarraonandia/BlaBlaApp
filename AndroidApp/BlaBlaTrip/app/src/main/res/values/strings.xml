@@ -49,6 +49,7 @@
     <string name="bt_next">Siguiente</string>
     <string name="bt_start">Comenzar</string>
     <string name="bt_finish">Salir</string>
+    <string name="toast_nulo">No has elegido opcion</string>
     <string name="toast_fallar">¡¡¡ INCORRECTO !!!</string>
     <string name="toast_aceptar">¡¡¡ CORRECTO !!!</string>
     <string name="resultado">El resultado es: </string>

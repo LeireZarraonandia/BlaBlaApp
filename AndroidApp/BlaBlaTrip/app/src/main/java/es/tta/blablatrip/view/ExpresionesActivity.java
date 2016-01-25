@@ -117,13 +117,13 @@ public class ExpresionesActivity extends AppCompatActivity
 
 
                 //del json seleccionas la opcion escogida
-                    //expresion.getJSONObject(ExpresionesActivity.numExpre);
+                //expresion.getJSONObject(ExpresionesActivity.numExpre);
                 //coges la opcion completa escogida
-                    //expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre);
+                //expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre);
                 //coges el primer objeto (0) de la opcion escogida
-                    //expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(0);
+                //expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(0);
                 //de la opcion escogida y del primer objeto (0) de dicha opcion coges el string que se identifica como "castellano"
-                    //expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(0).getString("castellano");
+                //expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(0).getString("castellano");
 
 
                 //obtienes la longitud de la opcion escogida
