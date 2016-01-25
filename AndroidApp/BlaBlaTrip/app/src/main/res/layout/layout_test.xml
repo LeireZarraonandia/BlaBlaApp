@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:text="@string/bt_send"
         android:onClick="comprobar"
-        android:layout_below="@id/respuesta"/>
+        android:layout_centerVertical="true"/>
 
     <Button
         android:id="@+id/button_next_test"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:text="@string/bt_next"
         android:onClick="teses"
-        android:layout_below="@id/respuesta"/>
+        android:layout_centerVertical="true"/>/>
 
     <TextView
         android:id="@+id/resultado"

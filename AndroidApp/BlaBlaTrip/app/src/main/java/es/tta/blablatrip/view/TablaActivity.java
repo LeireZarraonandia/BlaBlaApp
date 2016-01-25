@@ -16,8 +16,6 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.w3c.dom.Text;
-
 import java.io.IOException;
 
 public class TablaActivity extends AppCompatActivity
@@ -36,9 +34,10 @@ public class TablaActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_tabla);
 
+        //recoger nombre pais y hacer que sea la cabecera de la columna2
         TextView cabeceraCol2 = (TextView) findViewById(R.id.cabeceraCol2);
         cabeceraCol2.setText(InicioActivity.pais);
-
+        cabeceraCol2.setGravity(Gravity.CENTER_HORIZONTAL);
 
         tabla = (TableLayout) findViewById(R.id.tabla);
 
@@ -74,7 +73,7 @@ public class TablaActivity extends AppCompatActivity
 
                 //crear columna3 de la fila creada
                 final Button col3 = new Button(getApplicationContext());
-                col3.setText(R.string.cabeceraAudio);
+                col3.setText(R.string.cabeceraAudio);;
                 col3.setWidth(100);
                 col3.setGravity(Gravity.CENTER_HORIZONTAL);
                 col3.setOnClickListener(new View.OnClickListener()
@@ -94,6 +93,7 @@ public class TablaActivity extends AppCompatActivity
                     }
                 });
 
+                //añadir filas al view
                 fila.addView(col1);
                 fila.addView(col2);
                 fila.addView(col3);

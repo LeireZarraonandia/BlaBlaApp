@@ -19,6 +19,7 @@
     <string name="elegirPais_label">Elija país a valorar o la app en su conjunto:</string>
     <string name="valoracion_label">Escriba su valoración: </string>
     <string name="bt_enviarValoracion">Enviar valoración</string>
+    <string name="toast_error">NO HA SELECCIONADO NINGUNA OPCIÓN O NO SE HA ESCRITO NADA</string>
 
     <!-- PAIS -->
     <string name="title_activity_pais">PAÍS</string>
@@ -49,7 +50,6 @@
     <string name="bt_next">Siguiente</string>
     <string name="bt_start">Comenzar</string>
     <string name="bt_finish">Salir</string>
-    <string name="toast_nulo">No has elegido opcion</string>
     <string name="toast_fallar">¡¡¡ INCORRECTO !!!</string>
     <string name="toast_aceptar">¡¡¡ CORRECTO !!!</string>
     <string name="resultado">El resultado es: </string>

@@ -1,19 +1,10 @@
 package es.tta.blablatrip.model;
 
-import android.content.Context;
-import android.os.Environment;
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import es.tta.blablatrip.view.InicioActivity;
@@ -74,31 +65,11 @@ public class ServerClient
 
     }
 
-    public void descargarTest () throws IOException, JSONException {
-        JSONArray test = getTest();
-        String contenido = test.toString();
-        try {
-            File tarjeta = Environment.getExternalStorageDirectory();
-            File file = new File(tarjeta.getAbsolutePath(), "test"+InicioActivity.pais+".json");
-            OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(file));
-            osw.write(contenido);
-            osw.flush();
-            osw.close();
-        } catch (IOException ioe) {
-        }
-    }
+    /*public void descargarTest ()
+    {
+    }*/
 
-    public void descargarExpresiones () throws IOException, JSONException {
-        JSONArray expresiones = getExpresiones();
-        String contenido = expresiones.toString();
-        try {
-            File tarjeta = Environment.getExternalStorageDirectory();
-            File file = new File(tarjeta.getAbsolutePath(), "expresiones"+InicioActivity.pais+".json");
-            OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(file));
-            osw.write(contenido);
-            osw.flush();
-            osw.close();
-        } catch (IOException ioe) {
-        }
-    }
+    /*public void descargarExpresiones ()
+    {
+    }*/
 }

@@ -29,8 +29,8 @@ public class TraductorActivity extends AppCompatActivity
         //mWebView.setWebViewClient(new MyAppWebViewClient());
     }
 
-    @Override
     // Detectar cuando se presiona el botón de retroceso
+    @Override
     public void onBackPressed()
     {
         if(mWebView.canGoBack())

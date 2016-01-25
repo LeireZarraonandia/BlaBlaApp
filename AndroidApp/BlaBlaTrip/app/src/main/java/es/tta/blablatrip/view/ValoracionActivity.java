@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import es.tta.blablatrip.R;
 
 public class ValoracionActivity extends AppCompatActivity
@@ -47,7 +46,8 @@ public class ValoracionActivity extends AppCompatActivity
             // las opciones están viculadas al parámetro 'i'
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
             {
-                switch (i) {
+                switch (i)
+                {
                     case 0:
                     {
                         pais = datos[0];
@@ -56,37 +56,37 @@ public class ValoracionActivity extends AppCompatActivity
                     }
                     case 1: {
                         pais = datos[1];
-                        Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
 
                     case 2: {
                         pais = datos[2];
-                        Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
 
                     case 3: {
                         pais = datos[3];
-                        Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
 
                     case 4: {
                         pais = datos[4];
-                        Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
 
                     case 5: {
                         pais = datos[5];
-                        Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
 
                     case 6: {
                         pais = datos[6];
-                        Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }
@@ -106,16 +106,17 @@ public class ValoracionActivity extends AppCompatActivity
 
                 String[] to = { "amartinez194@ikasle.ehu.eus", "lzarraonandi001@ikasle.ehu.eus" };
                 //String[] cc = { "otroEmail@ejemplo.com" }; // si se quiere poner cc
-                //enviar(to, cc, "Hola", "Esto es un email enviado desde una app de Android"); //si se pone cc
+
                 if( (pais==datos[0]) || (editMail.equals("")))
                 {
-                    Toast.makeText(getApplicationContext(), "NO HA SELECCIONADO NINGUNA OPCIÓN O NO SE HA ESCRITO NADA", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.toast_error, Toast.LENGTH_SHORT).show();
 
                 }
                 else
                 {
                     // (a quien/es, asunto, cuerpo mail)
                     enviar(to, "BlaBlaTrip - Valoración " + pais, editMail);
+                    //enviar(to, cc, "BlaBlaTrip - Valoración " + pais, editMail); //si se pone cc
                 }
             }
         });

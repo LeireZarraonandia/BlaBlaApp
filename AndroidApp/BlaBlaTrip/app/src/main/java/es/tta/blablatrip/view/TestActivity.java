@@ -70,8 +70,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_send_test).setVisibility(View.VISIBLE);
     }
 
-    public void comprobar (View v) {
-        Data data = new Data();
+    public void comprobar (View v)
+    {
+        Data data = new Data(); ///////////////////////////////
 
         findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
         findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
@@ -81,30 +82,29 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         TextView resultado = (TextView) findViewById(R.id.resultado);
         int choices = grupo.getChildCount();
 
-        for (int i = 0; i < choices; i++) {
+        for(int i=0; i<choices; i++)
+        {
             grupo.getChildAt(i).setEnabled(false);
         }
 
         grupo.getChildAt(correcto).setBackgroundColor(color.GREEN);
 
-        int selected = grupo.getCheckedRadioButtonId();
+        int selected=grupo.getCheckedRadioButtonId();
         View radioButton = grupo.findViewById(selected);
         final int elegido = grupo.indexOfChild(radioButton);
-        String prueba = "El resultado es ";
+        String prueba="El resultado es ";
 
-        if (elegido == -1) {
-            Toast.makeText(this, R.string.toast_nulo, Toast.LENGTH_SHORT).show();
-            resultado.setText(prueba + String.valueOf(resultadoTest.getCorrectos()) + "/" + String.valueOf(nPregunta));
-        } else {
-            if (elegido != correcto) {
-                grupo.getChildAt(elegido).setBackgroundColor(color.RED);
-                Toast.makeText(this, R.string.toast_fallar, Toast.LENGTH_SHORT).show();
-                resultado.setText(prueba + String.valueOf(resultadoTest.getCorrectos()) + "/" + String.valueOf(nPregunta));
-            } else {
-                resultadoTest.actualizarResultado(true);
-                Toast.makeText(this, R.string.toast_aceptar, Toast.LENGTH_SHORT).show();
-                resultado.setText(prueba + String.valueOf(resultadoTest.getCorrectos()) + "/" + String.valueOf(nPregunta));
-            }
+        if (elegido!=correcto)
+        {
+            grupo.getChildAt(elegido).setBackgroundColor(color.RED);
+            Toast.makeText(this, R.string.toast_fallar, Toast.LENGTH_SHORT).show();
+            resultado.setText(prueba+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
+        }
+        else
+        {
+            resultadoTest.actualizarResultado(true);
+            Toast.makeText(this, R.string.toast_aceptar, Toast.LENGTH_SHORT).show();
+            resultado.setText(prueba+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
         }
     }
 
@@ -155,8 +155,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             findViewById(R.id.pregunta).setVisibility(View.INVISIBLE);
             findViewById(R.id.respuesta).setVisibility(View.INVISIBLE);
             findViewById(R.id.resultado).setVisibility(View.INVISIBLE);
-            findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
-            findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
             TextView finalizar = (TextView) findViewById(R.id.finalizar);
             finalizar.setText(frase_final+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
             findViewById(R.id.finalizar).setVisibility(View.VISIBLE);
