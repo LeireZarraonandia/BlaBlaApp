@@ -94,18 +94,24 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         final int elegido = grupo.indexOfChild(radioButton);
         String prueba="El resultado es ";
 
-        if (elegido!=correcto)
-        {
-            grupo.getChildAt(elegido).setBackgroundColor(color.RED);
-            Toast.makeText(this, R.string.toast_fallar, Toast.LENGTH_SHORT).show();
-            resultado.setText(prueba+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
+        if (elegido == -1){
+            Toast.makeText(this, R.string.toast_norespuesta, Toast.LENGTH_SHORT).show();
         }
-        else
-        {
-            resultadoTest.actualizarResultado(true);
-            Toast.makeText(this, R.string.toast_aceptar, Toast.LENGTH_SHORT).show();
-            resultado.setText(prueba+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
+        else {
+            if (elegido!=correcto)
+            {
+                grupo.getChildAt(elegido).setBackgroundColor(color.RED);
+                Toast.makeText(this, R.string.toast_fallar, Toast.LENGTH_SHORT).show();
+
+            }
+            else
+            {
+                resultadoTest.actualizarResultado(true);
+                Toast.makeText(this, R.string.toast_aceptar, Toast.LENGTH_SHORT).show();
+
+            }
         }
+        resultado.setText(prueba+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
     }
 
     public void teses (View v) throws JSONException
