@@ -9,7 +9,13 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+
+import java.io.IOException;
+
 import es.tta.blablatrip.R;
+import es.tta.blablatrip.presentation.Data;
 
 public class PaisActivity extends AppCompatActivity
 {
@@ -84,9 +90,15 @@ public class PaisActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void descargar (View view)
-    {
-        Toast toast = Toast.makeText(getApplicationContext(), "La descarga todavía no está implementada", Toast.LENGTH_SHORT);
-        toast.show();
+    public void descargar (View view)  {
+        Data data = new Data();
+        try {
+            data.descargar();
+            Toast.makeText(this, "descargado", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

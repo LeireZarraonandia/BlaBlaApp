@@ -1,12 +1,19 @@
 package es.tta.blablatrip.model;
 
+import android.os.Environment;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import es.tta.blablatrip.presentation.Data;
 import es.tta.blablatrip.view.InicioActivity;
 
 public class ServerClient
@@ -65,9 +72,18 @@ public class ServerClient
 
     }
 
-    /*public void descargarTest ()
-    {
-    }*/
+    public void descargarTest () throws IOException, JSONException {
+        String contenido = getTest().toString();
+        {
+            File tarjeta = Environment.getExternalStorageDirectory();
+        /*    File file = new File(tarjeta.getAbsolutePath(), "test"+InicioActivity.pais+".json");
+            OutputStreamWriter osw = new OutputStreamWriter( new FileOutputStream(file));
+            osw.write(contenido);
+            osw.flush();
+            osw.close();*/
+        }/* catch (IOException ioe) {
+        }*/
+    }
 
     /*public void descargarExpresiones ()
     {

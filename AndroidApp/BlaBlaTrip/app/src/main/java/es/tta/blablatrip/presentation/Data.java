@@ -24,4 +24,8 @@ public class Data
         JSONArray jsonArrayExpresion = rest.getExpresiones();
         return jsonArrayExpresion;
     }
+
+    public void descargar () throws IOException, JSONException {
+        rest.descargarTest();
+    }
 }

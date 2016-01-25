@@ -165,6 +165,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             finalizar.setText(frase_final+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
             findViewById(R.id.finalizar).setVisibility(View.VISIBLE);
             findViewById(R.id.button_finish_test).setVisibility(View.VISIBLE);
+            findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
+            findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
         }
     }
 
