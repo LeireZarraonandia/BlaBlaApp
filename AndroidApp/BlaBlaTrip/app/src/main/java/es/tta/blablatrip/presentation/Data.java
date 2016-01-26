@@ -8,6 +8,7 @@ import org.json.JSONException;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 
 import es.tta.blablatrip.R;
 import es.tta.blablatrip.model.MemoryClient;
@@ -19,6 +20,7 @@ public class Data
 {
     ServerClient rest = new ServerClient();
     MemoryClient memory = new MemoryClient();
+    public String urlServer = "http://51.254.127.111/BlaBlaTrip/";
 
     public Data ()
     {
@@ -95,6 +97,25 @@ public class Data
             String pathDescargar= path.concat(Integer.toString(i)).concat(".mp3");
             rest.descargarAudios(pathDescargar);
         }
+
+    }
+
+    public String getUriAudio (String audioRecogido){
+        String uriAudio="";
+        File tarjeta = Environment.getExternalStorageDirectory();
+        File file = new File(tarjeta,InicioActivity.pais);
+        if (file.isDirectory()) {
+            File archivo= new File (file+"/"+audioRecogido);
+            if (archivo.isFile())
+            {
+                uriAudio=archivo.toString();
+
+            }
+        }else{
+            uriAudio=urlServer+audioRecogido;
+
+        }
+        return uriAudio;
 
     }
 }

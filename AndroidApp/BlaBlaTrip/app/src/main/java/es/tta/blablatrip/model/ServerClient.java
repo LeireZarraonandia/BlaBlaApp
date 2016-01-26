@@ -116,10 +116,6 @@ public class ServerClient
 
         int count;
 
-       /* URL url = new URL(urlServer+path);
-        URLConnection conexion = url.openConnection();
-        conexion.connect();*/
-
         conn = getConnection(urlServer+path);
         conn.setRequestMethod("GET");
 
