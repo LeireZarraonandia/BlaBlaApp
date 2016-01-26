@@ -76,6 +76,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
         findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
+        findViewById(R.id.imageDiploma).setVisibility(View.INVISIBLE);
+
         Color color = new Color();
 
         RadioGroup grupo = (RadioGroup) findViewById(R.id.respuesta);
@@ -119,7 +121,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     {
         findViewById(R.id.button_start_test).setVisibility(View.INVISIBLE);
         findViewById(R.id.inicio).setVisibility(View.INVISIBLE);
-        findViewById(R.id.imageTest).setVisibility(View.VISIBLE);
+        findViewById(R.id.imageTest).setVisibility(View.INVISIBLE);
         findViewById(R.id.imageDiploma).setVisibility(View.INVISIBLE);
 
         final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
@@ -167,8 +169,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             TextView finalizar = (TextView) findViewById(R.id.finalizar);
             finalizar.setText(frase_final+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
             findViewById(R.id.finalizar).setVisibility(View.VISIBLE);
-            findViewById(R.id.imageDiploma).setVisibility(View.VISIBLE);
             findViewById(R.id.button_finish_test).setVisibility(View.VISIBLE);
+            findViewById(R.id.imageDiploma).setVisibility(View.VISIBLE);
             findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
             findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
         }
