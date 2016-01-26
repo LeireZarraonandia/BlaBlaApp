@@ -39,13 +39,23 @@ public class Data
 
     public JSONArray getExpresiones () throws IOException, JSONException
     {
-        JSONArray jsonArrayExpresion = rest.getExpresiones();
-        return jsonArrayExpresion;
+        String pathExpresiones = "expresiones"+InicioActivity.pais+".json";
+        File tarjeta = Environment.getExternalStorageDirectory();
+        File file = new File(tarjeta,pathExpresiones);
+        JSONArray jsonArray = null;
+        if (file.isFile()){
+            jsonArray= memory.leerTest();
+
+        }else {
+            jsonArray = rest.getExpresiones();
+
+        }
+        return jsonArray;
     }
 
-    public JSONArray descargar () throws IOException, JSONException {
+    public void descargar () throws IOException, JSONException {
         rest.descargarTest();
-        JSONArray jsonArray = memory.leerTest();
-        return jsonArray;
+        rest.descargarExpresiones();
+
     }
 }

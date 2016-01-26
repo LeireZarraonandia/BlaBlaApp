@@ -1,5 +1,6 @@
 package es.tta.blablatrip.view;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -84,6 +85,7 @@ public class PaisActivity extends AppCompatActivity
         Intent intent = new Intent(this, TestActivity.class);
         startActivity(intent);
     }
+
 
     public void descargar (View view)  {
         new Thread(new Runnable()

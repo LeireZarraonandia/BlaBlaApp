@@ -9,12 +9,8 @@ import org.json.JSONException;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 import es.tta.blablatrip.view.InicioActivity;
 
@@ -39,5 +35,10 @@ public class MemoryClient {
     public JSONArray leerTest() throws IOException, JSONException {
         String pathTest = "test"+ InicioActivity.pais+".json";
         return new JSONArray(leerFrase(pathTest));
+    }
+
+    public JSONArray leerExpresiones() throws IOException, JSONException {
+        String pathExpresiones = "expresiones"+InicioActivity.pais+".json";
+        return new JSONArray(leerFrase(pathExpresiones));
     }
 }

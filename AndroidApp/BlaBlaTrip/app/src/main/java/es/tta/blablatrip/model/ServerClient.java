@@ -86,7 +86,17 @@ public class ServerClient
         }
     }
 
-    /*public void descargarExpresiones ()
-    {
-    }*/
+    public void descargarExpresiones () throws IOException, JSONException {
+        String pathExpresiones = urlServer+"expresiones"+InicioActivity.pais+".json";
+        JSONArray jsonArray= new JSONArray(getString(pathExpresiones));
+        String contenido = jsonArray.toString();
+        {
+            File tarjeta = Environment.getExternalStorageDirectory();
+            File file = new File(tarjeta.getAbsolutePath(), "expresiones"+InicioActivity.pais+".json");
+            OutputStreamWriter osw = new OutputStreamWriter( new FileOutputStream(file));
+            osw.write(contenido);
+            osw.flush();
+            osw.close();
+        }
+    }
 }
