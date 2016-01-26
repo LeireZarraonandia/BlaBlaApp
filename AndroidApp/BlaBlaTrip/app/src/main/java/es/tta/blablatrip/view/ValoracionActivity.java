@@ -114,7 +114,7 @@ public class ValoracionActivity extends AppCompatActivity
                 }
                 else
                 {
-                    // (a quien/es, asunto, cuerpo mail)
+                    // (a quien/es, cc, asunto, cuerpo mail)
                     enviar(to, "BlaBlaTrip - Valoración " + pais, editMail);
                     //enviar(to, cc, "BlaBlaTrip - Valoración " + pais, editMail); //si se pone cc
                 }

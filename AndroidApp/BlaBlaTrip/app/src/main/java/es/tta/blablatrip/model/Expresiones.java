@@ -1,7 +1,5 @@
 package es.tta.blablatrip.model;
 
-import org.json.JSONArray;
-
 public class Expresiones
 {
     private String espano;

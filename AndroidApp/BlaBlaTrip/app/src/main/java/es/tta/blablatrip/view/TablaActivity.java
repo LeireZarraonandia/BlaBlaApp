@@ -61,21 +61,22 @@ public class TablaActivity extends AppCompatActivity
                 final TextView col1 = new TextView(getApplicationContext());
                 col1.setText(expresiones.getEspanol());
                 col1.setWidth(100);
-                col1.setHeight(150);
-                col1.setGravity(Gravity.CENTER_HORIZONTAL);
+                col1.setHeight(170);
+                col1.setGravity(Gravity.CENTER);
 
                 //crear columna2 de la fila creada
                 final TextView col2 = new TextView(getApplicationContext());
                 col2.setText(expresiones.getIdioma());
                 col2.setWidth(100);
-                col2.setHeight(150);
-                col2.setGravity(Gravity.CENTER_HORIZONTAL);
+                col2.setHeight(170);
+                col2.setGravity(Gravity.CENTER);
 
                 //crear columna3 de la fila creada
                 final Button col3 = new Button(getApplicationContext());
-                col3.setText(R.string.cabeceraAudio);;
-                col3.setWidth(100);
-                col3.setGravity(Gravity.CENTER_HORIZONTAL);
+                col3.setText(R.string.cabeceraAudio);
+                col3.setWidth(70);
+                //col3.setHeight(160);
+                col3.setGravity(Gravity.CENTER);
                 col3.setOnClickListener(new View.OnClickListener()
                 {
                     @Override
