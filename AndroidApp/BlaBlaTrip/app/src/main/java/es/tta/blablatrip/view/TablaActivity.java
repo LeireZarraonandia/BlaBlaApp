@@ -119,7 +119,7 @@ public class TablaActivity extends AppCompatActivity
         View view = new View(this);
         AudioPlayer audio = new AudioPlayer(view);
         RelativeLayout layout = (RelativeLayout)findViewById(R.id.tabla_layout);
-        Uri uri = Uri.parse(urlServer+audioRecogido);
+        Uri uri = Uri.parse(audioRecogido);
         audio.setAudioUri(uri);
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);

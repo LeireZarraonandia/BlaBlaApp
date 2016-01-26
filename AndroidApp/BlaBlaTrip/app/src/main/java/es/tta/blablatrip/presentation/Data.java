@@ -50,7 +50,7 @@ public class Data
         File file = new File(tarjeta,pathExpresiones);
         JSONArray jsonArray = null;
         if (file.isFile()){
-            jsonArray= memory.leerTest();
+            jsonArray= memory.leerExpresiones();
 
         }else {
             jsonArray = rest.getExpresiones();
@@ -105,14 +105,14 @@ public class Data
         String uriAudio="";
         File tarjeta = Environment.getExternalStorageDirectory();
         File file = new File(tarjeta,InicioActivity.pais);
-        if (file.isDirectory()) {
+        //if (file.isDirectory()) {
             File archivo= new File (file+"/"+audioRecogido);
             if (archivo.isFile())
             {
                 uriAudio=archivo.toString();
 
             }
-        }else{
+        else{
             uriAudio=urlServer+audioRecogido;
 
         }
