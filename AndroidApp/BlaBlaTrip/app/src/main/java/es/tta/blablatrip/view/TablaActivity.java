@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import es.tta.blablatrip.R;
 import es.tta.blablatrip.model.Expresiones;
+import es.tta.blablatrip.presentation.Data;
+
 import android.widget.TableRow;
 import android.widget.TextView;
 import org.json.JSONArray;
@@ -124,4 +126,19 @@ public class TablaActivity extends AppCompatActivity
         layout.addView(view);
         audio.start();
     }
+
+    /*public void hearAudio(String audioRecogido) throws IOException
+    {
+        View view = new View(this);
+        AudioPlayer audio = new AudioPlayer(view);
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.tabla_layout);
+
+        Data data = new Data();
+
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        view.setLayoutParams(params);
+        layout.addView(view);
+        audio.start();
+    }*/
 }

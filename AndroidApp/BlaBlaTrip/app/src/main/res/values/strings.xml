@@ -57,5 +57,7 @@
     <string name="toast_norespuesta">No has seleccionado ninguna opción</string>
     <string name="resultado">El resultado es: </string>
     <string name="start">Vas a iniciar el test </string>
+    <string name="fraseFinal">Se ha acabado el test. El resultado es: </string>
+
 
 </resources>

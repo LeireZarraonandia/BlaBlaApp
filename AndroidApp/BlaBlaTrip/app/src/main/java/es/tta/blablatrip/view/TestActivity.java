@@ -94,10 +94,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         final int elegido = grupo.indexOfChild(radioButton);
         String prueba="El resultado es ";
 
-        if (elegido == -1){
+        if (elegido == -1)
+        {
             Toast.makeText(this, R.string.toast_norespuesta, Toast.LENGTH_SHORT).show();
         }
-        else {
+        else
+        {
             if (elegido!=correcto)
             {
                 grupo.getChildAt(elegido).setBackgroundColor(color.RED);
@@ -108,7 +110,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             {
                 resultadoTest.actualizarResultado(true);
                 Toast.makeText(this, R.string.toast_aceptar, Toast.LENGTH_SHORT).show();
-
             }
         }
         resultado.setText(prueba+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
@@ -118,6 +119,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     {
         findViewById(R.id.button_start_test).setVisibility(View.INVISIBLE);
         findViewById(R.id.inicio).setVisibility(View.INVISIBLE);
+        findViewById(R.id.imageTest).setVisibility(View.VISIBLE);
+        findViewById(R.id.imageDiploma).setVisibility(View.INVISIBLE);
 
         final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
         //int pregutnas = teses.length();
@@ -130,7 +133,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                     teses.getJSONObject(nPregunta).getString("wording"),
                     teses.getJSONObject(nPregunta).getJSONArray("answer"),
                     teses.getJSONObject(nPregunta).getInt("correct"));
-
 
 
             textWording.setText(test.getPregunta());
@@ -161,9 +163,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             findViewById(R.id.pregunta).setVisibility(View.INVISIBLE);
             findViewById(R.id.respuesta).setVisibility(View.INVISIBLE);
             findViewById(R.id.resultado).setVisibility(View.INVISIBLE);
+            findViewById(R.id.imageTest).setVisibility(View.INVISIBLE);
             TextView finalizar = (TextView) findViewById(R.id.finalizar);
             finalizar.setText(frase_final+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
             findViewById(R.id.finalizar).setVisibility(View.VISIBLE);
+            findViewById(R.id.imageDiploma).setVisibility(View.VISIBLE);
             findViewById(R.id.button_finish_test).setVisibility(View.VISIBLE);
             findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
             findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
