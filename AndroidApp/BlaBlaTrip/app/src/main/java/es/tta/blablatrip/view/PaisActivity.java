@@ -5,11 +5,13 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -91,14 +93,23 @@ public class PaisActivity extends AppCompatActivity
     }
 
     public void descargar (View view)  {
-        Data data = new Data();
-        try {
-            data.descargar();
-            Toast.makeText(this, "descargado", Toast.LENGTH_SHORT).show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Data data = new Data();
+
+                try
+                {
+                    data.descargar();
+
+                }
+                catch(Exception e)
+                {
+                    Log.e("BlaBlaTrip", e.getMessage(), e);
+                }
+            }
+        }).start();
     }
 }

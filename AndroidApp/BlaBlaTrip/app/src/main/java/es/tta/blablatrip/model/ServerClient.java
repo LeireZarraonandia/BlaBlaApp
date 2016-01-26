@@ -73,16 +73,17 @@ public class ServerClient
     }
 
     public void descargarTest () throws IOException, JSONException {
-        String contenido = getTest().toString();
+        String pathTest = urlServer+"test"+InicioActivity.pais+".json";
+        JSONArray jsonArray= new JSONArray(getString(pathTest));
+        String contenido = jsonArray.toString();
         {
             File tarjeta = Environment.getExternalStorageDirectory();
-        /*    File file = new File(tarjeta.getAbsolutePath(), "test"+InicioActivity.pais+".json");
+            File file = new File(tarjeta.getAbsolutePath(), "test"+InicioActivity.pais+".json");
             OutputStreamWriter osw = new OutputStreamWriter( new FileOutputStream(file));
             osw.write(contenido);
             osw.flush();
-            osw.close();*/
-        }/* catch (IOException ioe) {
-        }*/
+            osw.close();
+        }
     }
 
     /*public void descargarExpresiones ()
