@@ -9,13 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.io.IOException;
-
 import es.tta.blablatrip.R;
 import es.tta.blablatrip.presentation.Data;
 
