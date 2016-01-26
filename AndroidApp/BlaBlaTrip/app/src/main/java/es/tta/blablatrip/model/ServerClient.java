@@ -4,14 +4,19 @@ import android.os.Environment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
 
 import es.tta.blablatrip.presentation.Data;
 import es.tta.blablatrip.view.InicioActivity;
@@ -98,5 +103,40 @@ public class ServerClient
             osw.flush();
             osw.close();
         }
+    }
+
+    public void descargarAudios (String path) throws IOException {
+        HttpURLConnection conn = null;
+        File tarjeta = Environment.getExternalStorageDirectory();
+        File file = new File(tarjeta,InicioActivity.pais);
+
+        if (!file.isDirectory()) {
+            file.mkdir();
+        }
+
+        int count;
+
+       /* URL url = new URL(urlServer+path);
+        URLConnection conexion = url.openConnection();
+        conexion.connect();*/
+
+        conn = getConnection(urlServer+path);
+        conn.setRequestMethod("GET");
+
+        InputStream input = new BufferedInputStream(conn.getInputStream());
+        OutputStream output = new FileOutputStream(file+"/"+path);
+
+        byte data[] = new byte[1024];
+
+        long total = 0;
+
+        while ((count = input.read(data)) != -1) {
+            total += count;
+            output.write(data, 0, count);
+        }
+
+        output.flush();
+        output.close();
+        input.close();
     }
 }
