@@ -59,7 +59,8 @@
                             android:text="@string/bt_basicas"
                             android:textColor="#ffe3e3e3"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
@@ -85,7 +86,8 @@
                             android:text="@string/bt_salud"
                             android:textColor="#ffe3e3e3"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
                     </android.support.v7.widget.CardView>
             </TableRow>
             <TableRow>
@@ -138,7 +140,8 @@
                             android:text="@string/bt_viajar"
                             android:textColor="#ffe3e3e3"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
                     </android.support.v7.widget.CardView>
             </TableRow>
             <TableRow>
@@ -165,7 +168,8 @@
                             android:text="@string/bt_comer"
                             android:textColor="#ffe3e3e3"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
@@ -191,7 +195,8 @@
                             android:text="@string/bt_compras"
                             android:textColor="#ffe3e3e3"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
                     </android.support.v7.widget.CardView>
             </TableRow>
             <TableRow>
@@ -273,7 +278,8 @@
                             android:text="@string/bt_quejas"
                             android:textColor="#ffe3e3e3"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
                     </android.support.v7.widget.CardView>
             </TableRow>
             </TableLayout>
