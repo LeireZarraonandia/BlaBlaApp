@@ -140,7 +140,7 @@ public class InicioActivity extends AppCompatActivity
                 if ((infoWifi.isConnected()) || (infoNet.isConnected()))
                 {
                     conectado = true;
-                    Toast.makeText(this,R.string.connected, Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this,R.string.connected, Toast.LENGTH_LONG).show();
                 }
                 else
                 {
