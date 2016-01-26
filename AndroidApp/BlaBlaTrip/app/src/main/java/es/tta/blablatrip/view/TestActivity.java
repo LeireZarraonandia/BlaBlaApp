@@ -119,66 +119,67 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     public void teses (View v) throws JSONException
     {
-        findViewById(R.id.button_start_test).setVisibility(View.INVISIBLE);
-        findViewById(R.id.inicio).setVisibility(View.INVISIBLE);
-        findViewById(R.id.imageTest).setVisibility(View.INVISIBLE);
-        findViewById(R.id.imageDiploma).setVisibility(View.INVISIBLE);
-
-        final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
-        //int pregutnas = teses.length();
-        if(nPregunta<teses.length())
-        {
-            group.removeAllViews();
-            TextView textWording = (TextView) findViewById(R.id.pregunta);
-
-            final Test test = new Test(
-                    teses.getJSONObject(nPregunta).getString("wording"),
-                    teses.getJSONObject(nPregunta).getJSONArray("answer"),
-                    teses.getJSONObject(nPregunta).getInt("correct"));
-
-
-            textWording.setText(test.getPregunta());
-            for (int i = 0; i<test.getOpciones().length(); i++)
-            {
-                final RadioButton radio = new RadioButton(getApplicationContext());
-                radio.setText(test.getOpciones().getString(i));
-                radio.setOnClickListener(listener);
-                radio.setTextColor(Color.BLACK);
-                group.post(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        group.addView(radio);
-                    }
-                });
-            }
-            findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
-            findViewById(R.id.button_send_test).setVisibility(View.VISIBLE);
-            correcto = test.getCorrecto();
-            nPregunta++;
-        }
-
-        if (nPregunta == teses.length())
-        {
-            String frase_final = "Se ha acabado el test. El resultado es: ";
-            findViewById(R.id.pregunta).setVisibility(View.INVISIBLE);
-            findViewById(R.id.respuesta).setVisibility(View.INVISIBLE);
-            findViewById(R.id.resultado).setVisibility(View.INVISIBLE);
+        if (PaisActivity.conectado==false){
+            Toast.makeText(this, R.string.noconnected, Toast.LENGTH_LONG).show();
+            finish();
+        }else {
+            findViewById(R.id.button_start_test).setVisibility(View.INVISIBLE);
+            findViewById(R.id.inicio).setVisibility(View.INVISIBLE);
             findViewById(R.id.imageTest).setVisibility(View.INVISIBLE);
-            TextView finalizar = (TextView) findViewById(R.id.finalizar);
-            finalizar.setText(frase_final+String.valueOf(resultadoTest.getCorrectos())+"/"+String.valueOf(nPregunta));
-            findViewById(R.id.finalizar).setVisibility(View.VISIBLE);
-            findViewById(R.id.button_finish_test).setVisibility(View.VISIBLE);
-            findViewById(R.id.imageDiploma).setVisibility(View.VISIBLE);
-            findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
-            findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
+            findViewById(R.id.imageDiploma).setVisibility(View.INVISIBLE);
+
+            final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
+            //int pregutnas = teses.length();
+            if (nPregunta < teses.length()) {
+                group.removeAllViews();
+                TextView textWording = (TextView) findViewById(R.id.pregunta);
+
+                final Test test = new Test(
+                        teses.getJSONObject(nPregunta).getString("wording"),
+                        teses.getJSONObject(nPregunta).getJSONArray("answer"),
+                        teses.getJSONObject(nPregunta).getInt("correct"));
+
+
+                textWording.setText(test.getPregunta());
+                for (int i = 0; i < test.getOpciones().length(); i++) {
+                    final RadioButton radio = new RadioButton(getApplicationContext());
+                    radio.setText(test.getOpciones().getString(i));
+                    radio.setOnClickListener(listener);
+                    radio.setTextColor(Color.BLACK);
+                    group.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            group.addView(radio);
+                        }
+                    });
+                }
+                findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
+                findViewById(R.id.button_send_test).setVisibility(View.VISIBLE);
+                correcto = test.getCorrecto();
+                nPregunta++;
+            }
+
+            if (nPregunta == teses.length()) {
+                String frase_final = "Se ha acabado el test. El resultado es: ";
+                findViewById(R.id.pregunta).setVisibility(View.INVISIBLE);
+                findViewById(R.id.respuesta).setVisibility(View.INVISIBLE);
+                findViewById(R.id.resultado).setVisibility(View.INVISIBLE);
+                findViewById(R.id.imageTest).setVisibility(View.INVISIBLE);
+                TextView finalizar = (TextView) findViewById(R.id.finalizar);
+                finalizar.setText(frase_final + String.valueOf(resultadoTest.getCorrectos()) + "/" + String.valueOf(nPregunta));
+                findViewById(R.id.finalizar).setVisibility(View.VISIBLE);
+                findViewById(R.id.button_finish_test).setVisibility(View.VISIBLE);
+                findViewById(R.id.imageDiploma).setVisibility(View.VISIBLE);
+                findViewById(R.id.button_next_test).setVisibility(View.INVISIBLE);
+                findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
+            }
         }
     }
 
     public void salir (View v)
     {
-        Intent intent = new Intent(this, PaisActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, PaisActivity.class);
+        //startActivity(intent);
+        finish();
     }
 }

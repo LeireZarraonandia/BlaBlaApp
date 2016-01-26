@@ -1,6 +1,9 @@
 package es.tta.blablatrip.presentation;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Environment;
 import android.widget.Toast;
 
@@ -16,6 +19,7 @@ import es.tta.blablatrip.model.MemoryClient;
 import es.tta.blablatrip.model.ServerClient;
 import es.tta.blablatrip.view.ExpresionesActivity;
 import es.tta.blablatrip.view.InicioActivity;
+import es.tta.blablatrip.view.PaisActivity;
 
 public class Data
 {
@@ -37,8 +41,9 @@ public class Data
              jsonArray= memory.leerTest();
 
         }else {
-            jsonArray = rest.getTest();
-
+            if(PaisActivity.conectado){
+                jsonArray = rest.getTest();
+            }
         }
         return jsonArray;
     }
@@ -53,50 +58,51 @@ public class Data
             jsonArray= memory.leerExpresiones();
 
         }else {
-            jsonArray = rest.getExpresiones();
+            if(PaisActivity.conectado) {
+                jsonArray = rest.getExpresiones();
+            }
 
         }
         return jsonArray;
     }
 
-    public void descargar () throws IOException, JSONException {
-        rest.descargarTest();
-        rest.descargarExpresiones();
-        String path="";
+    public boolean descargar () throws IOException, JSONException {
+        if(PaisActivity.conectado) {
+            rest.descargarTest();
+            rest.descargarExpresiones();
+            String path = "";
 
-        switch (InicioActivity.pais){
-            case "Alemania":
-            {
-                path+="DE";
-                break;
+            switch (InicioActivity.pais) {
+                case "Alemania": {
+                    path += "DE";
+                    break;
+                }
+                case "Francia": {
+                    path += "FR";
+                    break;
+                }
+                case "Inglaterra": {
+                    path += "EN";
+                    break;
+                }
+                case "Italia": {
+                    path += "IT";
+                    break;
+                }
+                case "Portugal": {
+                    path += "PT";
+                    break;
+                }
             }
-            case "Francia":
-            {
-                path+="FR";
-                break;
-            }
-            case "Inglaterra":
-            {
-                path+="EN";
-                break;
-            }
-            case "Italia":
-            {
-                path+="IT";
-                break;
-            }
-            case "Portugal":
-            {
-                path+="PT";
-                break;
-            }
-        }
-        path+="-Que-0";
+            path += "-Que-0";
 
-        for (int i=1;i<=rest.getExpresiones().getJSONObject(7).getJSONArray("Quejas").length();i++)
-        {
-            String pathDescargar= path.concat(Integer.toString(i)).concat(".mp3");
-            rest.descargarAudios(pathDescargar);
+            for (int i = 1; i <= rest.getExpresiones().getJSONObject(7).getJSONArray("Quejas").length(); i++) {
+                String pathDescargar = path.concat(Integer.toString(i)).concat(".mp3");
+                rest.descargarAudios(pathDescargar);
+            }
+            return true;
+        }else{
+            return false;
         }
 
     }
@@ -113,10 +119,14 @@ public class Data
 
             }
         else{
-            uriAudio=urlServer+audioRecogido;
+                if(PaisActivity.conectado){
+                    uriAudio=urlServer+audioRecogido;
 
-        }
+                }
+            }
         return uriAudio;
 
     }
+
+
 }

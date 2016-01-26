@@ -16,6 +16,8 @@ import es.tta.blablatrip.presentation.Data;
 
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import java.io.IOException;
@@ -49,63 +51,63 @@ public class TablaActivity extends AppCompatActivity
         {
             try
             {
-                expresion = ExpresionesActivity.expresion;
+                if (PaisActivity.conectado==true) {
+                    expresion = ExpresionesActivity.expresion;
 
-                final Expresiones expresiones = new Expresiones (
-                        expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("castellano"),
-                        expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("idioma"),
-                        expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("audio"));
+                    final Expresiones expresiones = new Expresiones(
+                            expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("castellano"),
+                            expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("idioma"),
+                            expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("audio"));
 
-                //crear fila de la tabla
-                final TableRow fila = new TableRow(getApplicationContext());
+                    //crear fila de la tabla
+                    final TableRow fila = new TableRow(getApplicationContext());
 
-                //crear columna1 de la fila creada
-                final TextView col1 = new TextView(getApplicationContext());
-                col1.setText(expresiones.getEspanol());
-                col1.setWidth(100);
-                col1.setHeight(170);
-                col1.setGravity(Gravity.CENTER);
+                    //crear columna1 de la fila creada
+                    final TextView col1 = new TextView(getApplicationContext());
+                    col1.setText(expresiones.getEspanol());
+                    col1.setWidth(100);
+                    col1.setHeight(170);
+                    col1.setGravity(Gravity.CENTER);
 
-                //crear columna2 de la fila creada
-                final TextView col2 = new TextView(getApplicationContext());
-                col2.setText(expresiones.getIdioma());
-                col2.setWidth(100);
-                col2.setHeight(170);
-                col2.setGravity(Gravity.CENTER);
+                    //crear columna2 de la fila creada
+                    final TextView col2 = new TextView(getApplicationContext());
+                    col2.setText(expresiones.getIdioma());
+                    col2.setWidth(100);
+                    col2.setHeight(170);
+                    col2.setGravity(Gravity.CENTER);
 
-                //crear columna3 de la fila creada
-                final Button col3 = new Button(getApplicationContext());
-                col3.setText(R.string.cabeceraAudio);
-                col3.setWidth(70);
-                //col3.setHeight(160);
-                col3.setGravity(Gravity.CENTER);
-                col3.setOnClickListener(new View.OnClickListener()
-                {
-                    @Override
-                    public void onClick(View v)
-                    {
-                        try
-                        {
-                            Data data = new Data();
-                            audioRecogido = expresiones.getAudio();
-                            hearAudio(data.getUriAudio(audioRecogido));
+                    //crear columna3 de la fila creada
+                    final Button col3 = new Button(getApplicationContext());
+                    col3.setText(R.string.cabeceraAudio);
+                    col3.setWidth(70);
+                    //col3.setHeight(160);
+                    col3.setGravity(Gravity.CENTER);
+                    col3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            try {
+                                Data data = new Data();
+                                audioRecogido = expresiones.getAudio();
+                                hearAudio(data.getUriAudio(audioRecogido));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
-                        catch (IOException e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
-                });
+                    });
 
-                //añadir filas al view
-                fila.addView(col1);
-                fila.addView(col2);
-                fila.addView(col3);
+                    //añadir filas al view
+                    fila.addView(col1);
+                    fila.addView(col2);
+                    fila.addView(col3);
 
-                tabla.addView(fila);
+                    tabla.addView(fila);
 
-                layoutLinear = (LinearLayout)findViewById(R.id.tabla_linear); //LinearLayout de dentro
-                //layoutRelative = (RelativeLayout)findViewById(R.id.tabla_layout); //RelativeLayout de fuera
+                    layoutLinear = (LinearLayout) findViewById(R.id.tabla_linear); //LinearLayout de dentro
+                    //layoutRelative = (RelativeLayout)findViewById(R.id.tabla_layout); //RelativeLayout de fuera
+                }else{
+                    Toast.makeText(this, R.string.noconnected, Toast.LENGTH_LONG).show();
+                    finish();
+                }
             }
             catch (JSONException e)
             {

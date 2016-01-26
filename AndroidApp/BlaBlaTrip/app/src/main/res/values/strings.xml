@@ -28,6 +28,7 @@
     <string name="bt_evaluacion">Evaluación</string>
     <string name="bt_expresiones">Expresiones</string>
     <string name="bt_descarga">Descargar</string>
+    <string name="descargado">La descarga ha finalizado</string>
 
     <!-- EXPRESIONES -->
     <string name="title_activity_expresiones">EXPRESIONES</string>
