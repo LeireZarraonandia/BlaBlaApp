@@ -2,6 +2,7 @@ package es.tta.blablatrip.presentation;
 
 import android.graphics.drawable.Drawable;
 import android.os.Environment;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;

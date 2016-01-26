@@ -86,8 +86,9 @@ public class TablaActivity extends AppCompatActivity
                     {
                         try
                         {
+                            Data data = new Data();
                             audioRecogido = expresiones.getAudio();
-                            hearAudio(audioRecogido);
+                            hearAudio(data.getUriAudio(audioRecogido));
                         }
                         catch (IOException e)
                         {
