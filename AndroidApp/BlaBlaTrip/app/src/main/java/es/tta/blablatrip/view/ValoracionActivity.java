@@ -54,37 +54,43 @@ public class ValoracionActivity extends AppCompatActivity
                         //Toast.makeText(getApplicationContext(), "Número de opciones: "+Integer.toString(longitud), Toast.LENGTH_SHORT).show();
                         break;
                     }
-                    case 1: {
+                    case 1:
+                    {
                         pais = datos[1];
                         //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
 
-                    case 2: {
+                    case 2:
+                    {
                         pais = datos[2];
                         //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
 
-                    case 3: {
+                    case 3:
+                    {
                         pais = datos[3];
                         //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
 
-                    case 4: {
+                    case 4:
+                    {
                         pais = datos[4];
                         //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
 
-                    case 5: {
+                    case 5:
+                    {
                         pais = datos[5];
                         //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
                     }
 
-                    case 6: {
+                    case 6:
+                    {
                         pais = datos[6];
                         //Toast.makeText(getApplicationContext(), pais, Toast.LENGTH_SHORT).show();
                         break;
@@ -93,11 +99,13 @@ public class ValoracionActivity extends AppCompatActivity
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
             }
         });
 
-        btMail.setOnClickListener(new View.OnClickListener() {
+        btMail.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
@@ -107,7 +115,7 @@ public class ValoracionActivity extends AppCompatActivity
                 String[] to = { "amartinez194@ikasle.ehu.eus", "lzarraonandi001@ikasle.ehu.eus" };
                 //String[] cc = { "otroEmail@ejemplo.com" }; // si se quiere poner cc
 
-                if( (pais==datos[0]) || (editMail.equals("")))
+                if( (pais == datos[0]) || (editMail.equals("")))
                 {
                     Toast.makeText(getApplicationContext(), R.string.toast_error, Toast.LENGTH_SHORT).show();
 

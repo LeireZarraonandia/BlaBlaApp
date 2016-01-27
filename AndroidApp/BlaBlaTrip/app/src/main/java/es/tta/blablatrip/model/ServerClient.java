@@ -1,10 +1,8 @@
 package es.tta.blablatrip.model;
 
 import android.os.Environment;
-
 import org.json.JSONArray;
 import org.json.JSONException;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,14 +14,12 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
-
-import es.tta.blablatrip.presentation.Data;
 import es.tta.blablatrip.view.InicioActivity;
 
 public class ServerClient
 {
     private String urlServer = "http://51.254.127.111/BlaBlaTrip/";
+
     public ServerClient()
     {
     }
@@ -74,43 +70,44 @@ public class ServerClient
     {
         String pathExpresiones = urlServer+"expresiones"+InicioActivity.pais+".json";
         return new JSONArray(getString(pathExpresiones));
-
     }
 
-    public void descargarTest () throws IOException, JSONException {
+    public void descargarTest () throws IOException, JSONException
+    {
         String pathTest = urlServer+"test"+InicioActivity.pais+".json";
         JSONArray jsonArray= new JSONArray(getString(pathTest));
         String contenido = jsonArray.toString();
-        {
-            File tarjeta = Environment.getExternalStorageDirectory();
-            File file = new File(tarjeta.getAbsolutePath(), "test"+InicioActivity.pais+".json");
-            OutputStreamWriter osw = new OutputStreamWriter( new FileOutputStream(file));
-            osw.write(contenido);
-            osw.flush();
-            osw.close();
-        }
+
+        File tarjeta = Environment.getExternalStorageDirectory();
+        File file = new File(tarjeta.getAbsolutePath(), "test"+InicioActivity.pais+".json");
+        OutputStreamWriter osw = new OutputStreamWriter( new FileOutputStream(file));
+        osw.write(contenido);
+        osw.flush();
+        osw.close();
     }
 
-    public void descargarExpresiones () throws IOException, JSONException {
+    public void descargarExpresiones () throws IOException, JSONException
+    {
         String pathExpresiones = urlServer+"expresiones"+InicioActivity.pais+".json";
         JSONArray jsonArray= new JSONArray(getString(pathExpresiones));
         String contenido = jsonArray.toString();
-        {
-            File tarjeta = Environment.getExternalStorageDirectory();
-            File file = new File(tarjeta.getAbsolutePath(), "expresiones"+InicioActivity.pais+".json");
-            OutputStreamWriter osw = new OutputStreamWriter( new FileOutputStream(file));
-            osw.write(contenido);
-            osw.flush();
-            osw.close();
-        }
+
+        File tarjeta = Environment.getExternalStorageDirectory();
+        File file = new File(tarjeta.getAbsolutePath(), "expresiones"+InicioActivity.pais+".json");
+        OutputStreamWriter osw = new OutputStreamWriter( new FileOutputStream(file));
+        osw.write(contenido);
+        osw.flush();
+        osw.close();
     }
 
-    public void descargarAudios (String path) throws IOException {
+    public void descargarAudios (String path) throws IOException
+    {
         HttpURLConnection conn = null;
         File tarjeta = Environment.getExternalStorageDirectory();
         File file = new File(tarjeta,InicioActivity.pais);
 
-        if (!file.isDirectory()) {
+        if (!file.isDirectory())
+        {
             file.mkdir();
         }
 
@@ -126,7 +123,8 @@ public class ServerClient
 
         long total = 0;
 
-        while ((count = input.read(data)) != -1) {
+        while ((count = input.read(data)) != -1)
+        {
             total += count;
             output.write(data, 0, count);
         }
