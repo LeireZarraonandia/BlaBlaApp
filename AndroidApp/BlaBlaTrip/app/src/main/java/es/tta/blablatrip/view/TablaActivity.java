@@ -13,9 +13,11 @@ import android.widget.TableLayout;
 import es.tta.blablatrip.R;
 import es.tta.blablatrip.model.Expresiones;
 import es.tta.blablatrip.presentation.Data;
+
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import java.io.IOException;
@@ -49,9 +51,9 @@ public class TablaActivity extends AppCompatActivity
         {
             try
             {
-                if (PaisActivity.conectado == true)
-                {
-                    expresion = ExpresionesActivity.expresion;
+                expresion = ExpresionesActivity.expresion;
+                if (expresion!=null) {
+
 
                     final Expresiones expresiones = new Expresiones(
                             expresion.getJSONObject(ExpresionesActivity.numExpre).getJSONArray(ExpresionesActivity.expre).getJSONObject(i).getString("castellano"),
@@ -81,19 +83,14 @@ public class TablaActivity extends AppCompatActivity
                     col3.setWidth(70);
                     //col3.setHeight(160);
                     col3.setGravity(Gravity.CENTER);
-                    col3.setOnClickListener(new View.OnClickListener()
-                    {
+                    col3.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void onClick(View v)
-                        {
-                            try
-                            {
+                        public void onClick(View v) {
+                            try {
                                 Data data = new Data();
                                 audioRecogido = expresiones.getAudio();
                                 hearAudio(data.getUriAudio(audioRecogido));
-                            }
-                            catch (IOException e)
-                            {
+                            } catch (IOException e) {
                                 e.printStackTrace();
                             }
                         }
@@ -108,9 +105,7 @@ public class TablaActivity extends AppCompatActivity
 
                     layoutLinear = (LinearLayout) findViewById(R.id.tabla_linear); //LinearLayout de dentro
                     //layoutRelative = (RelativeLayout)findViewById(R.id.tabla_layout); //RelativeLayout de fuera
-                }
-                else
-                {
+                }else{
                     Toast.makeText(this, R.string.noconnected, Toast.LENGTH_LONG).show();
                     finish();
                 }
@@ -135,4 +130,19 @@ public class TablaActivity extends AppCompatActivity
         layout.addView(view);
         audio.start();
     }
+
+    /*public void hearAudio(String audioRecogido) throws IOException
+    {
+        View view = new View(this);
+        AudioPlayer audio = new AudioPlayer(view);
+        RelativeLayout layout = (RelativeLayout)findViewById(R.id.tabla_layout);
+
+        Data data = new Data();
+
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        view.setLayoutParams(params);
+        layout.addView(view);
+        audio.start();
+    }*/
 }

@@ -1,12 +1,23 @@
 package es.tta.blablatrip.presentation;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Environment;
+import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONException;
+
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+
+import es.tta.blablatrip.R;
 import es.tta.blablatrip.model.MemoryClient;
 import es.tta.blablatrip.model.ServerClient;
+import es.tta.blablatrip.view.ExpresionesActivity;
 import es.tta.blablatrip.view.InicioActivity;
 import es.tta.blablatrip.view.PaisActivity;
 
@@ -26,16 +37,11 @@ public class Data
         File tarjeta = Environment.getExternalStorageDirectory();
         File file = new File(tarjeta,pathTest);
         JSONArray jsonArray = null;
-
-        if (file.isFile())
-        {
+        if (file.isFile()){
              jsonArray= memory.leerTest();
 
-        }
-        else
-        {
-            if(PaisActivity.conectado)
-            {
+        }else {
+            if(PaisActivity.conectado){
                 jsonArray = rest.getTest();
             }
         }
@@ -48,16 +54,11 @@ public class Data
         File tarjeta = Environment.getExternalStorageDirectory();
         File file = new File(tarjeta,pathExpresiones);
         JSONArray jsonArray = null;
-
-        if (file.isFile())
-        {
+        if (file.isFile()){
             jsonArray= memory.leerExpresiones();
 
-        }
-        else
-        {
-            if(PaisActivity.conectado)
-            {
+        }else {
+            if(PaisActivity.conectado) {
                 jsonArray = rest.getExpresiones();
             }
 
@@ -65,78 +66,67 @@ public class Data
         return jsonArray;
     }
 
-    public boolean descargar () throws IOException, JSONException
-    {
-        if(PaisActivity.conectado)
-        {
+    public boolean descargar () throws IOException, JSONException {
+        if(PaisActivity.conectado) {
             rest.descargarTest();
             rest.descargarExpresiones();
             String path = "";
 
-            switch (InicioActivity.pais)
-            {
-                case "Alemania":
-                {
+            switch (InicioActivity.pais) {
+                case "Alemania": {
                     path += "DE";
                     break;
                 }
-                case "Francia":
-                {
+                case "Francia": {
                     path += "FR";
                     break;
                 }
-                case "Inglaterra":
-                {
+                case "Inglaterra": {
                     path += "EN";
                     break;
                 }
-                case "Italia":
-                {
+                case "Italia": {
                     path += "IT";
                     break;
                 }
-                case "Portugal":
-                {
+                case "Portugal": {
                     path += "PT";
                     break;
                 }
             }
             path += "-Que-0";
 
-            for (int i = 1; i <= rest.getExpresiones().getJSONObject(7).getJSONArray("Quejas").length(); i++)
-            {
+            for (int i = 1; i <= rest.getExpresiones().getJSONObject(7).getJSONArray("Quejas").length(); i++) {
                 String pathDescargar = path.concat(Integer.toString(i)).concat(".mp3");
                 rest.descargarAudios(pathDescargar);
             }
-
             return true;
-        }
-        else
-        {
+        }else{
             return false;
         }
 
     }
 
-    public String getUriAudio (String audioRecogido)
-    {
+    public String getUriAudio (String audioRecogido){
         String uriAudio="";
         File tarjeta = Environment.getExternalStorageDirectory();
         File file = new File(tarjeta,InicioActivity.pais);
-        File archivo = new File (file+"/"+audioRecogido);
-
-        if (archivo.isFile())
-        {
-            uriAudio = archivo.toString();
-        }
-        else
-        {
-            if(PaisActivity.conectado)
+        //if (file.isDirectory()) {
+            File archivo= new File (file+"/"+audioRecogido);
+            if (archivo.isFile())
             {
-                uriAudio=urlServer+audioRecogido;
-            }
-        }
+                uriAudio=archivo.toString();
 
+            }
+        else{
+                if(PaisActivity.conectado){
+                    uriAudio=urlServer+audioRecogido;
+
+                }
+            }
         return uriAudio;
+
     }
+
+
 }

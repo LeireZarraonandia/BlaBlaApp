@@ -1,5 +1,6 @@
 package es.tta.blablatrip.view;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import es.tta.blablatrip.R;
 import es.tta.blablatrip.presentation.Data;
 
@@ -21,6 +23,7 @@ public class PaisActivity extends AppCompatActivity
     String pais = InicioActivity.pais;
     String nombre = pais.toLowerCase();
     public static boolean conectado = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,6 +40,7 @@ public class PaisActivity extends AppCompatActivity
 
         RelativeLayout rLayout = (RelativeLayout) findViewById(R.id.relativeLayout_pais);
         Resources res = getResources();
+
 
         switch (nombre)
         {
@@ -80,22 +84,25 @@ public class PaisActivity extends AppCompatActivity
 
     public void expresiones (View view)
     {
+        conectado();
         Intent intent = new Intent(this, ExpresionesActivity.class);
         startActivity(intent);
     }
 
     public void evaluacion (View view)
     {
+        conectado();
         Intent intent = new Intent(this, TestActivity.class);
         startActivity(intent);
     }
 
-    public void descargar (View view)
-    {
+
+    public void descargar (View view)  {
         conectado();
 
         new Thread(new Runnable()
         {
+
             @Override
             public void run()
             {
@@ -104,6 +111,7 @@ public class PaisActivity extends AppCompatActivity
                 try
                 {
                         conectado = data.descargar();
+
                 }
                 catch(Exception e)
                 {
@@ -112,13 +120,9 @@ public class PaisActivity extends AppCompatActivity
             }
 
         }).start();
-
-        if(conectado)
-        {
+        if(conectado) {
             Toast.makeText(this, R.string.descargado, Toast.LENGTH_LONG).show();
-        }
-        else
-        {
+        }else{
             Toast.makeText(this, R.string.noconnected, Toast.LENGTH_LONG).show();
         }
     }

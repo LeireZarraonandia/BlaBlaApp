@@ -13,6 +13,7 @@ public class InicioActivity extends AppCompatActivity
 {
     public static String pais = null;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -24,52 +25,62 @@ public class InicioActivity extends AppCompatActivity
         // está deprecado. Necesitaria API level 21 --> Android 5.0
         Drawable drawable = res.getDrawable(R.drawable.europa);
         rLayout.setBackground(drawable);
+
     }
 
     public void traductor (View view)
     {
-        Intent intent = new Intent(this, TraductorActivity.class);
-        startActivity(intent);
+            Intent intent = new Intent(this, TraductorActivity.class);
+            startActivity(intent);
+
     }
 
     public void valoracion (View view)
     {
-        Intent intent = new Intent(this, ValoracionActivity.class);
-        startActivity(intent);
+            Intent intent = new Intent(this, ValoracionActivity.class);
+            startActivity(intent);
+
     }
 
     public void alemania (View view)
     {
         pais="Alemania";
-        Intent intent = new Intent(this, PaisActivity.class);
-        startActivity(intent);
-    }
 
+            Intent intent = new Intent(this, PaisActivity.class);
+            startActivity(intent);
+
+    }
     public void francia (View view)
     {
         pais="Francia";
-        Intent intent = new Intent(this, PaisActivity.class);
-        startActivity(intent);
-    }
+          Intent intent = new Intent(this, PaisActivity.class);
+          startActivity(intent);
 
+    }
     public void inglaterra (View view)
     {
         pais="Inglaterra";
-        Intent intent = new Intent(this, PaisActivity.class);
-        startActivity(intent);
-    }
 
+         Intent intent = new Intent(this, PaisActivity.class);
+         startActivity(intent);
+
+    }
     public void italia (View view)
     {
         pais="Italia";
-        Intent intent = new Intent(this, PaisActivity.class);
-        startActivity(intent);
-    }
 
+          Intent intent = new Intent(this, PaisActivity.class);
+          startActivity(intent);
+
+    }
     public void portugal (View view)
     {
         pais="Portugal";
+
         Intent intent = new Intent(this, PaisActivity.class);
         startActivity(intent);
+
     }
+
+
 }

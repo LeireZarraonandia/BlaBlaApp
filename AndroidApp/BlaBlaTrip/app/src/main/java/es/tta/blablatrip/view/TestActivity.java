@@ -1,5 +1,6 @@
 package es.tta.blablatrip.view;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -33,8 +34,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         //findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
 
         resultadoTest = new ResultadoTest(0);
-        final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
-        final TextView textWording = (TextView) findViewById(R.id.pregunta);
+        final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta); ///////////////////////////////
+        final TextView textWording = (TextView) findViewById(R.id.pregunta); /////////////////////////////
 
         nPregunta=0;
 
@@ -45,7 +46,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void run()
             {
-                int nPregunta = 0;
+                int nPregunta = 0; ///////////////////////
                 Data data = new Data();
 
                 try
@@ -71,7 +72,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     public void comprobar (View v)
     {
-        Data data = new Data();
+        Data data = new Data(); ///////////////////////////////
 
         findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
         findViewById(R.id.button_send_test).setVisibility(View.INVISIBLE);
@@ -118,13 +119,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     public void teses (View v) throws JSONException
     {
-        if (PaisActivity.conectado == false)
-        {
+        if (teses==null){
             Toast.makeText(this, R.string.noconnected, Toast.LENGTH_LONG).show();
             finish();
-        }
-        else
-        {
+        }else {
             findViewById(R.id.button_start_test).setVisibility(View.INVISIBLE);
             findViewById(R.id.inicio).setVisibility(View.INVISIBLE);
             findViewById(R.id.imageTest).setVisibility(View.INVISIBLE);
@@ -132,8 +130,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
             final RadioGroup group = (RadioGroup) findViewById(R.id.respuesta);
             //int pregutnas = teses.length();
-            if (nPregunta < teses.length())
-            {
+            if (nPregunta < teses.length()) {
                 group.removeAllViews();
                 TextView textWording = (TextView) findViewById(R.id.pregunta);
 
@@ -144,8 +141,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
 
                 textWording.setText(test.getPregunta());
-                for (int i = 0; i < test.getOpciones().length(); i++)
-                {
+                for (int i = 0; i < test.getOpciones().length(); i++) {
                     final RadioButton radio = new RadioButton(getApplicationContext());
                     radio.setText(test.getOpciones().getString(i));
                     radio.setOnClickListener(listener);
@@ -163,8 +159,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 nPregunta++;
             }
 
-            if (nPregunta == teses.length())
-            {
+            if (nPregunta == teses.length()) {
                 String frase_final = "Se ha acabado el test. El resultado es: ";
                 findViewById(R.id.pregunta).setVisibility(View.INVISIBLE);
                 findViewById(R.id.respuesta).setVisibility(View.INVISIBLE);
